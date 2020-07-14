@@ -161,3 +161,20 @@ Migrating to CreateRecipes (20200714010200)
   [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
   [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(903101620009169910)[0m
   [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/recipes" for ::1 at 2020-07-13 18:06:55 -0700
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RecipesController#index as HTML
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms | Allocations: 2256)
+
+
+  
+NameError (uninitialized constant RecipesController::RecipeSerializer):
+  
+app/controllers/recipes_controller.rb:6:in `index'
+Started GET "/recipes" for ::1 at 2020-07-13 18:07:07 -0700
+Processing by RecipesController#index as HTML
+  [1m[36mRecipe Load (0.9ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/controllers/recipes_controller.rb:6:in `index'
+Completed 200 OK in 9ms (Views: 2.7ms | ActiveRecord: 4.3ms | Allocations: 1714)
+
+
