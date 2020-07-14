@@ -1,1 +1,11 @@
 /config/master.key
+
+/log/*
+/tmp/*
+!/log/.keep
+!/tmp/.keep
+
+/.bundle
+
+/storage/*
+!/storage/.keep
