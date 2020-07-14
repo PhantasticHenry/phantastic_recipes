@@ -5,3 +5,5 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+mini_cheesecakes = Recipe.create(title: "Mini Cheesecakes", recipe_link: "https://www.cookingclassy.com/cheesecake-cupcakes/", image_link: "https://www.cookingclassy.com/wp-content/uploads/2013/04/mini-cheesecakes-01.jpg", recipe_origin: "greece", recipe_type: "dessert" )
