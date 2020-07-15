@@ -1,4 +1,4 @@
-class IngredientSerializer
-  include FastJsonapi::ObjectSerializer
-  attributes :name
+class IngredientSerializer ActiveModel::Serializer
+  attributes :id, :name
+  has_many :recipes
 end
