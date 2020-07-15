@@ -200,17 +200,17 @@ header .intro-text {
 	padding-bottom: 50px;
 	text-align: center;
 }
-/* Features Section */
-#features {
+/* Recipes Section */
+#recipes {
 	padding: 10px 0;
 }
-#features .features-item {
+#recipes .recipe {
 	margin: 0 20px;
 }
-#features img {
+#recipes img {
 	margin: 30px auto 20px;
 }
-#features .about-img:before {
+#recipes .about-img:before {
 	display: block;
 	content: '';
 	position: absolute;
@@ -220,7 +220,7 @@ header .intro-text {
 	left: 8px;
 	border: 1px solid rgba(255, 255, 255, 0.5);
 }
-#features p {
+#recipes p {
 	line-height: 24px;
 	margin: 15px 0 30px;
 }
