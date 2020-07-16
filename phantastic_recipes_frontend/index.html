@@ -25,32 +25,23 @@
     <title>Phantastic Recipes</title>
 </head>
 <body>
-    <!-- Navigation
-    ==========================================-->
-<nav id="menu" class="navbar navbar-default navbar-fixed-top">
-    <div class="container"> 
-      <!-- Brand and toggle get grouped for better mobile display -->
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
-      </div>
-      
-      <!-- Collect the nav links, forms, and other content for toggling -->
-      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        <ul class="nav navbar-nav">
-          <li><a href="#recipes-container" class="page-scroll">Create Recipe</a></li>
-          <li><a href="#about" class="page-scroll">Delete Recipe</a></li>
-          <li><a href="#restaurant-menu" class="page-scroll"></a></li>
-          <li><a href="#team" class="page-scroll">Random Recipe</a></li>
-          <li><a href="#contact" class="page-scroll">Search</a></li>
-        </ul>
-      </div>
-      <!-- /.navbar-collapse --> 
-    </div>
-  </nav>
-  <!-- Header -->
-  <header id="header">
-    <div class="intro">
-      <div class="overlay">
+  
+  
+
+  <!-- Header & Sidenav -->
+    <header id="header">
+      <div class="intro">
+        <div class="overlay">
+          <div id="mySidenav" class="sidenav">
+              <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+              <a href="#">Add Recipe</a>
+              <a href="#">Remove Recipe</a>
+              <a href="#">All Recipes</a>
+            </div>
+            
+            <div id="main">
+              <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; more</span>
+            </div>
         <div class="container">
           <div class="row">
             <div class="intro-text">
@@ -62,39 +53,21 @@
     </div>
   </header>
   <!-- Recipes Section -->
-  <div id="recipes-container" class="text-center">
-    <div class="container">
+  <div id="recipes" class="text-center">
       <div class="section-title">
         <h2>Recipes</h2>
       </div>
-      <div class="row">
-        <div class="col-xs-12 col-sm-4">
-          <div class="recipe-card">
-            <!-- <h3>Lorem ipsum dolor</h3>
-            <img src="#image link here" class="img-responsive" alt="">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sed commodo.</p> -->
-          </div>
-        </div>
-    <!--   <div class="col-xs-12 col-sm-4">
-          <div class="recipes-container-item">
-            <h3>Consectetur adipiscing</h3>
-            <img src="img/specials/2.jpg" class="img-responsive" alt="">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sed commodo.</p>
-          </div>
-        </div>
-        <div class="col-xs-12 col-sm-4">
-          <div class="recipes-container-item">
-            <h3>Duis sed dapibus</h3>
-            <img src="img/specials/3.jpg" class="img-responsive" alt="">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sed commodo.</p>
-          </div> 
-        </div> --> 
+      <div class="recipe-card-container">
+          <!-- <div class="recipe-card">
+
+          </div> -->
       </div>
-    </div>
   </div>
+  <script src="src/components/recipe.js"></script>
   <script src="src/components/recipes.js"></script>
   <script src="src/components/app.js"></script>
   <script src="src/adapters/RecipesAdapter.js"></script>  
   <script src="src/index.js"></script>
+  <script src="src/scripts.js"></script>
 </body>
 </html>
