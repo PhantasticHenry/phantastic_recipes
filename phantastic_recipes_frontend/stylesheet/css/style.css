@@ -7,7 +7,32 @@ body, html {
 	width: 100% !important;
 	height: 100% !important;
 }
-.dropdown {
+@media (min-width: 768px) {
+	.dropdown .dropdown-menu{
+	display: block; 
+	opacity: 0;
+	/* opacity: 1; */
+	-webkit-transition: all 500ms ease-in;
+	-moz-transition: all 500ms ease-in;
+	-ms-transition: all 500ms ease-in;
+	-o-transition: all 500ms ease-in;
+	transition: all 500ms ease-in;
+} 
+	
+.dropdown:hover .dropdown-menu {
+	display: block;
+	opacity: 1;
+	top: 60px;
+	background-color: #f9f9f9;
+}
+	
+.vrau{
+	display:block;
+	opacity:1;
+}
+	
+}
+/* .dropdown {
 	position: relative;
 	display: inline-block;
 }
@@ -23,7 +48,7 @@ body, html {
 
 .dropdown:hover .dropdown-content {
 	display: block;
-}
+} */
 
 .sidenav {
 	height: 100%;
