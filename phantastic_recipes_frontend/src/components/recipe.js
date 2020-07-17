@@ -8,6 +8,9 @@ class Recipe {
         recipeCard.className = "recipe-card"
         const recipeTitle = document.createElement('h3')
         recipeTitle.innerHTML = this.title
-
+        const recipeLink = document.createElement('a')
+        recipeLink.href = this.recipe_link
+        const recipeImage = document.createElement('img')
+        recipeImage.src = this.image_link
     }
 }
