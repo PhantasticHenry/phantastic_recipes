@@ -7,6 +7,7 @@ body, html {
 	width: 100% !important;
 	height: 100% !important;
 }
+
 .sidenav {
 	height: 100%;
 	width: 0;
@@ -42,14 +43,16 @@ margin-left: 50px;
 }
 
 #main {
-transition: margin-left .5s;
-padding: 16px;
+	position: fixed;
+	transition: margin-left .5s;
+	padding: 16px;
 }
 
 @media screen and (max-height: 450px) {
 .sidenav {padding-top: 15px;}
 .sidenav a {font-size: 18px;}
 }
+
 h1, h2, h3, h4 {
 	font-family: 'Raleway', sans-serif;
 }
@@ -66,7 +69,7 @@ h2 {
 h2::after {
 	position: absolute;
 	content: "";
-	background: #d43031;
+	background: green;
 	height: 2px;
 	width: 70px;
 	bottom: 0;
@@ -253,8 +256,9 @@ header .intro-text {
     justify-content: space-around;
 }
 #recipes .recipe-card {
-	display: table;
-    position: relative;
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-around;
     box-shadow: 4px 4px 8px 0 green;
     transition: 0.3s;
     width: 32%;
