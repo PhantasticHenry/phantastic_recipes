@@ -36,7 +36,6 @@
               <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
               <a href="#">Add Recipe</a>
               <a href="#">Remove Recipe</a>
-              <a href="#">All Recipes</a>
             </div>
             
             <div id="main">
@@ -56,13 +55,17 @@
   <div id="recipes" class="text-center">
       <div class="section-title">
         <h2>Recipes</h2>
-      </div>
-      <div class="recipe-card-container">
-          <!-- <div class="recipe-card">
-
-          </div> -->
+          <div class="dropdown">
+            <span>view all</span>
+              <div class="dropdown-menu">
+                <div class="recipe-card-container">
+          
+                </div>
+              </div>
+          </div>
       </div>
   </div>
+  
   <script src="src/components/recipe.js"></script>
   <script src="src/components/recipes.js"></script>
   <script src="src/components/app.js"></script>
