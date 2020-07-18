@@ -9,10 +9,10 @@ body, html {
 }
 
 @media (min-width: 768px) {
-	.dropdown .dropdown-menu{
-	display: block; 
-	opacity: 0;
-	/* opacity: 1; */
+	.dropdown .dropdown-menu {
+	display: block;
+	/* opacity: 0; */
+	opacity: 1;
 	-webkit-transition: all 500ms ease-in;
 	-moz-transition: all 500ms ease-in;
 	-ms-transition: all 500ms ease-in;
@@ -54,7 +54,7 @@ padding: 8px 8px 8px 32px;
 text-decoration: none;
 font-size: 25px;
 color: #818181;
-display: block;
+display: block; 
 transition: 0.3s;
 }
 
@@ -129,6 +129,8 @@ p.intro {
 	line-height: 24px;
 }
 a {
+	text-align: center;
+	display: block;
 	padding: 20px;
 	color: #8eb640;
 }
