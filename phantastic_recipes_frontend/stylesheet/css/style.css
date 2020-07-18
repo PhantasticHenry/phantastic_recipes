@@ -154,6 +154,7 @@ ul, ol {
 }
 a:focus, .btn:focus, .btn:active:focus, .btn.active:focus, .btn.focus, .btn:active.focus, .btn.active.focus {
 	outline: none;
+	text-align: center;
 	outline-offset: none;
 }
 
