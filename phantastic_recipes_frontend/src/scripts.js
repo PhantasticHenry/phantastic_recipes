@@ -1,3 +1,10 @@
+function openForm() {
+    document.getElementById("myForm").style.display = "block";
+}
+
+function closeForm() {
+    document.getElementById("myForm").style.display = "none";
+}
 function openNav() {
     document.getElementById("mySidenav").style.width = "250px";
     document.getElementById("main").style.marginLeft = "250px";
@@ -23,7 +30,6 @@ function dropDownMenu(){
         $(this).css({"display":'block','opacity':'0','top':'0px'}); 
     });
 });
-    
     
   //   $(".navbar-brand").click( function (){ 
   //    alert("js working"); 
