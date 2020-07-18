@@ -7,17 +7,18 @@ body, html {
 	width: 100% !important;
 	height: 100% !important;
 }
+
 @media (min-width: 768px) {
 	.dropdown .dropdown-menu{
 	display: block; 
-	/* opacity: 0; */
-	opacity: 1;
+	opacity: 0;
+	/* opacity: 1; */
 	-webkit-transition: all 500ms ease-in;
 	-moz-transition: all 500ms ease-in;
 	-ms-transition: all 500ms ease-in;
 	-o-transition: all 500ms ease-in;
 	transition: all 500ms ease-in;
-} 
+}
 	
 .dropdown:hover .dropdown-menu {
 	display: block;
@@ -31,25 +32,6 @@ body, html {
 	opacity:1;
 }
 	
-}
-/* .dropdown {
-	position: relative;
-	display: inline-block;
-}
-
-.dropdown-content {
-	display: none;
-	background-color: #f9f9f9;
-	min-width: 160px;
-	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-	padding: 12px 16px;
-	z-index: 1;
-}
-
-.dropdown:hover .dropdown-content {
-	display: block;
-} */
-
 .sidenav {
 	height: 100%;
 	width: 0;
@@ -57,7 +39,7 @@ body, html {
 	z-index: 1;
 	top: 0;
 	left: 0;
-	background-color: #111;
+	background-color: rgb(17, 17, 17);
 	overflow-x: hidden;
 	transition: 0.5s;
 	padding-top: 60px;
@@ -167,91 +149,7 @@ a:focus, .btn:focus, .btn:active:focus, .btn.active:focus, .btn.focus, .btn:acti
 	outline: none;
 	outline-offset: none;
 }
-/* Navigation */
-.navbar .navbar-nav {
-	display: inline-block;
-	float: none;
-	vertical-align: top;
-}
-.navbar .navbar-collapse {
-	text-align: center;
-}
-#menu {
-	padding: 20px;
-	transition: all 0.8s;
-}
-#menu.navbar-default {
-	background-color: rgba(248, 248, 248, 0);
-	border-color: rgba(231, 231, 231, 0);
-}
-#menu.navbar-default .navbar-nav > li > a {
-	text-transform: uppercase;
-	color: #eee;
-	font-weight: 400;
-	font-size: 15px;
-	padding: 5px 0;
-	border: 2px solid transparent;
-	letter-spacing: 0.5px;
-	margin: 0 40px 0 40px;
-}
-#menu.navbar-default .navbar-nav > li > a:hover {
-	color: #d43031;
-}
-.on {
-	background-color: #262626 !important;
-	padding: 0 !important;
-	padding: 10px 0 !important;
-}
-.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
-	color: #d43031 !important;
-	background-color: transparent;
-}
-.navbar-toggle {
-	border-radius: 0;
-}
-.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
-	background-color: #d43031;
-	border-color: #d43031;
-}
-.navbar-default .navbar-toggle .icon-bar {
-	background-color: #FFF;
-}
-.navbar-default .navbar-toggle:hover>.icon-bar {
-	background-color: #FFF;
-}
-.section-title {
-	margin-bottom: 70px;
-}
-.section-title .overlay {
-	padding: 80px 0;
-	background: rgba(0, 0, 0, 0.7);
-}
-.section-title p {
-	font-size: 22px;
-}
-.section-title hr {
-	margin: 0 auto;
-	margin-bottom: 40px;
-}
-.btn-custom {
-	text-transform: uppercase;
-	color: #777;
-	background-color: transparent;
-	border: 2px solid #777;
-	padding: 14px 20px;
-	margin: 0;
-	font-size: 15px;
-	font-weight: 500;
-	letter-spacing: 0.5px;
-	border-radius: 0;
-	margin-top: 20px;
-	transition: all 0.3s;
-}
-.btn-custom:hover, .btn-custom:focus, .btn-custom.focus, .btn-custom:active, .btn-custom.active {
-	color: #ddd;
-	border: 2px solid #d43031;
-	background-color: #d43031;
-}
+
 /* Header Section */
 .intro {
 	display: table;
@@ -308,7 +206,7 @@ header .intro-text {
     margin-top: 20px;
 }
 #recipes img {
-	margin: auto auto 20px;
+	margin: auto auto;
 	width: 100%;
 	height: 500px;
 }
@@ -326,215 +224,86 @@ header .intro-text {
 	line-height: 24px;
 	margin: 15px 0 30px;
 }
-/* About Section */
-#about {
-	padding: 0;
-	background: #f6f6f6;
-}
-#about h2::after {
-	bottom: 0;
-	margin-left: 0;
-	left: 0;
-}
-#about .about-text {
-	padding: 80px 0;
-}
-#about .about-img {
-	background: #444 url(../img/gallery-bg.jpg) center center no-repeat;
-	background-size: cover;
-	height: 570px;
-}
-#about p {
-	line-height: 24px;
-	margin: 15px 0 30px;
-}
-/* Menu Section */
-#restaurant-menu {
-	padding: 100px 0 60px 0;
-}
-#restaurant-menu img {
-	width: 300px;
-	box-shadow: 15px 0 #a7c44c;
-}
-#restaurant-menu h3 {
-	padding: 10px 0;
-	text-transform: uppercase;
-}
-#restaurant-menu .menu-section hr {
-	margin: 0 auto;
-}
-#restaurant-menu .menu-section {
-	margin: 0 20px 80px;
-}
-#restaurant-menu .menu-section-title {
-	font-size: 32px;
-	display: block;
-	font-weight: 400;
-	color: #444;
-	margin: 20px 0;
-	text-align: center;
-}
-#restaurant-menu .menu-item {
-	margin: 45px 0;
-	font-size: 18px;
-}
-#restaurant-menu .menu-item-name {
-	font-weight: 400;
-	font-size: 20px;
-	color: #444;
-	margin-bottom: 10px;
-}
-#restaurant-menu .menu-item-description {
-	font-size: 15px;
-	width: 85%;
-}
-#restaurant-menu .menu-item-price {
-	float: right;
-	font-weight: 400;
-	color: #555;
-	margin-top: -36px;
-}
-/* Gallery Section */
-#gallery {
-	padding: 0;
-}
-#gallery .gallery-item {
-	margin: 0 -15px;
-}
-/* Team Section */
-#team {
-	padding: 120px 0;
-}
-#team h2::after {
-	bottom: 0;
-	margin-left: 0;
-	left: 0;
-}
-#team img {
-	max-width: 550px;
-}
-#team .team-img {
-	display: inline-block;
+
+*{box-sizing: border-box;}
+
+/* Button used to open the contact form - fixed at the bottom of the page */
+.open-button {
+	background-color: transparent;
+	color: white;
+	padding: 16px 20px;
+	border: none;
+	cursor: pointer;
+	opacity: 0.8;
 	position: relative;
+	top: 60px;
+	right: 28px;
+	width: 280px;
+	font-size: 25px;
 }
-/* Contact Section */
-#contact {
-	padding: 100px 0;
-	background: #333;
-}
-#contact .contact-item p {
-	font-size: 15px;
-	color: #777;
-}
-#contact .section-title {
-	margin-top: 60px;
-	margin-bottom: 40px;
-}
-#contact form {
-	padding: 0;
-}
-#contact h3 {
+.remove-button {
+	background-color: transparent;
+	color: white;
+	padding: 16px 20px;
+	border: none;
+	cursor: pointer;
+	opacity: 0.8;
 	position: relative;
-	text-transform: uppercase;
-	font-size: 18px;
-	font-weight: 400;
-	color: #aaa;
-	padding: 20px 0;
+	bottom: 23px;
+	right: 28px;
+	width: 280px;
 }
-#contact h3::after {
-	position: absolute;
-	content: "";
-	background: #d43031;
-	height: 2px;
-	width: 40px;
-	bottom: 0;
-	margin-left: -20px;
-	left: 50%;
+
+/* The popup form - hidden by default */
+.form-popup {
+	display: none;
+	position: fixed;
+	bottom: 25%;
+	right: 40%;
+	border: 3px solid #f1f1f1;
+	z-index: 9;
 }
-#contact .text-danger {
-	color: #cc0033;
-	text-align: left;
+
+/* Add styles to the form container */
+.form-container {
+	max-width: 300px;
+	padding: 10px;
+	background-color: white;
 }
-label {
-	font-size: 12px;
-	font-weight: 400;
-	font-family: 'Open Sans', sans-serif;
-	float: left;
-}
-#contact .form-control {
-	display: block;
+
+/* Full-width input fields */
+.form-container input[type=text], .form-container input[type=password] {
 	width: 100%;
-	padding: 6px 12px;
-	font-size: 16px;
-	line-height: 1.42857143;
-	color: #ccc;
-	background-color: rgba(255,255,255,.2);
-	background-image: none;
-	border: 0;
-	border-radius: 0;
-	-webkit-box-shadow: none;
-	box-shadow: none;
-	-webkit-transition: none;
-	-o-transition: none;
-	transition: none;
+	padding: 15px;
+	margin: 5px 0 22px 0;
+	border: none;
+	background: #f1f1f1;
 }
-#contact .form-control:focus {
-	border-color: #999;
-	outline: 0;
-	-webkit-box-shadow: transparent;
-	box-shadow: transparent;
+
+/* When the inputs get focus, do something */
+.form-container input[type=text]:focus, .form-container input[type=password]:focus {
+	background-color: #ddd;
+	outline: none;
 }
-.form-control::-webkit-input-placeholder {
-color: #999;
+
+/* Set a style for the submit/login button */
+.form-container .btn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom:10px;
+  opacity: 0.8;
 }
-.form-control:-moz-placeholder {
-color: #999;
+
+/* Add a red background color to the cancel button */
+.form-container .cancel {
+  background-color: red;
 }
-.form-control::-moz-placeholder {
-color: #999;
-}
-.form-control:-ms-input-placeholder {
-color: #999;
-}
-#contact .contact-item {
-	margin: 20px 0 40px 0;
-}
-#contact .contact-item span {
-	font-weight: 400;
-	color: #aaa;
-	text-transform: uppercase;
-	margin-bottom: 6px;
-	display: inline-block;
-}
-/* Footer Section*/
-#footer {
-	background: #262626;
-	padding: 40px 0 20px 0;
-}
-#footer .social {
-	margin-top: -5px;
-	text-align: right;
-}
-#footer .social ul li {
-	display: inline-block;
-	margin: 0 15px;
-}
-#footer .social i.fa {
-	font-size: 24px;
-	padding: 4px;
-	color: #888;
-	transition: all 0.3s;
-}
-#footer .social i.fa:hover {
-	color: #eee;
-}
-#footer p {
-	font-size: 14px;
-	color: #666;
-}
-#footer a {
-	color: #999;
-}
-#footer a:hover {
-	color: #eee;
+
+/* Add some hover effects to buttons */
+.form-container .btn:hover, .open-button:hover {
+  opacity: 1;
 }
