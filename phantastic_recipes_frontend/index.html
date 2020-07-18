@@ -5,8 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <!-- Favicons
-    ================================================== -->
+    <!-- Favicons  -->
 <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
 <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
 <link rel="apple-touch-icon" sizes="72x72" href="img/apple-touch-icon-72x72.png">
@@ -16,8 +15,7 @@
 <link rel="stylesheet" type="text/css"  href="stylesheet/css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" href="stylesheet/fonts/font-awesome/css/font-awesome.css">
 
-<!-- Stylesheet
-    ================================================== -->
+<!-- Stylesheet -->
 <link rel="stylesheet" type="text/css"  href="stylesheet/css/style.css">
 <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,500,600,700" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
@@ -37,15 +35,27 @@
               <button class="open-button" onclick="openForm()">Add Recipe</button>
               <div class="form-popup" id="myForm">
                 <form action="/action_page.php" class="form-container">
-                  <h1>Login</h1>
+                  <h1>Add Recipe</h1>
+                  <!--  Add Recipe Form  -->
+                  <label for="title"><b>Title</b></label>
+                  <input type="text" placeholder="Enter Recipe Title" name="title" required>
 
-                  <label for="email"><b>Email</b></label>
-                  <input type="text" placeholder="Enter Email" name="email" required>
+                  <label for="recipe_link"><b>Recipe Link</b></label>
+                  <input type="text" placeholder="http://recipe-link-example.com" name="recipe_link" required>
+                  
+                  <label for="image_link"><b>Image Link</b></label>
+                  <input type="text" placeholder="http://image-link-example.com" name="image_link" required>
+                  
+                  <label for="recipe_origin"><b>Recipe Origin</b></label>
+                  <input type="text" placeholder="Asian | Indian | Italian | ect.." name="recipe_origin" required>
+                  
+                  <label for="recipe_type"><b>Recipe Type</b></label>
+                  <input type="text" placeholder="Breakfast | Lunch | Dinner | Dessert | Drink" name="recipe_type" required>
+                  
+                  <label for="ingredients"><b>Ingredients</b></label>
+                  <input type="text" placeholder="(Example) - eggs, milk, bacon" name="ingredients" required>
 
-                  <label for="psw"><b>Password</b></label>
-                  <input type="password" placeholder="Enter Password" name="psw" required>
-
-                  <button type="submit" class="btn">Login</button>
+                  <button type="submit" class="btn">Add Recipe</button>
                   <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
                 </form>
               </div>
@@ -69,16 +79,21 @@
   <div id="recipes" class="text-center">
       <div class="section-title">
         <h2>Recipes</h2>
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <span class="caret"></span></a>
           <div class="dropdown">
-            <span>view all</span>
+            <!-- <span>view all</span> -->
               <div class="dropdown-menu">
                 <div class="recipe-card-container">
-          
+                  <!-- <div> recipe-card </div> -->        
+                  <!-- <div> recipe-card </div> -->        
+                  <!-- <div> recipe-card </div> -->        
+                  <!-- ........................ -->        
                 </div>
               </div>
           </div>
       </div>
   </div>
+  <button onclick="topFunction()" id="myBtn" title="Go to top">^</button>
   
   <script src="src/components/recipe.js"></script>
   <script src="src/components/recipes.js"></script>

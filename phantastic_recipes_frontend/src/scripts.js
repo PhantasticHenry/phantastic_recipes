@@ -1,3 +1,22 @@
+//Get the button:
+mybutton = document.getElementById("myBtn");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+    } else {
+    mybutton.style.display = "none";
+    }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}
 function openForm() {
     document.getElementById("myForm").style.display = "block";
 }
@@ -19,20 +38,21 @@ function closeNav() {
 }
 
 function dropDownMenu(){
-    $(".nav .dropdown").focusin( function (){
+    $(".dropdown").focusin( function (){
         $(this).find(".dropdown-menu").each(function(){
             $(this).css({"display":'block','opacity':'1','top':'60px'}); 
         });
     });
     
-    $(".nav .dropdown").focusout( function (){
+    $(".dropdown").focusout( function (){
     $(this).find(".dropdown-menu").each(function(){
         $(this).css({"display":'block','opacity':'0','top':'0px'}); 
     });
 });
+
     
-  //   $(".navbar-brand").click( function (){ 
-  //    alert("js working"); 
-  //   });
+    // $(".navbar-brand").click( function (){ 
+    //  alert("js working"); 
+    // });
     
 };
