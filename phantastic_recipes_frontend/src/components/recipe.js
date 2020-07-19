@@ -18,7 +18,7 @@ class Recipe {
         link.appendChild(img)
 
         const ingredients = document.createElement('div')
-        // ingredients.setAttribute('id', `recipeIngredients-${this.id}`)
+        ingredients.setAttribute('id', `recipeIngredients-${this.id}`)
         ingredients.setAttribute('class', 'recipe-ingredients-open-button')
         ingredients.setAttribute('onclick', `openRecipeIngredients(${this.id})`)
         ingredients.innerText = 'Ingredients'
@@ -43,11 +43,15 @@ class Recipe {
         ingredientsDiv.appendChild(ul)
         //close ingredients popup
         const close = document.createElement('button')
-        close.setAttribute('button', 'button')
+        // close.setAttribute('id', 'closePopup')
+        close.setAttribute('type', 'button')
         close.setAttribute('class', 'btn cancel')
-        close.setAttribute('onclick', 'closeRecipeIngredients()')
+        close.setAttribute('onclick', `closeRecipeIngredients(${this.id})`)
         close.innerText = 'Close'
         ingredientsDiv.appendChild(close)
+        
+        
+        
         
         
 
