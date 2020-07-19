@@ -4,28 +4,39 @@ class Recipe {
     }
 
     createRecipeCard() {
-        const recipeCard = document.createElement('div')
-        recipeCard.className = 'recipe-card'
-        const recipeTitle = document.createElement('h3')
-        recipeTitle.innerHTML = this.title.title 
-        recipeCard.appendChild(recipeTitle)
-        const recipeLink = document.createElement('a')
-        recipeLink.href = this.title.recipe_link
-        recipeCard.appendChild(recipeLink)
-        const recipeImage = document.createElement('img')
-        recipeImage.src = this.title.image_link
-        recipeLink.appendChild(recipeImage)
 
-        const recipeIngredients = document.createElement('button')
-        recipeIngredients.className = 'recipe-ingredients-open-button'
-        recipeIngredients.setAttribute('onclick', 'recipeIngredients')
-        recipeIngredients.innerText = 'view ingredients'
-        recipeCard.appendChild(recipeIngredients)
+        const card = document.createElement('div')
+        card.className = 'recipe-card'
+        const title = document.createElement('h3')
+        title.innerHTML = this.title.title
+        card.appendChild(title)
+        const link = document.createElement('a')
+        link.href = this.title.recipe_link
+        card.appendChild(link)
+        const img = document.createElement('img')
+        img.src = this.title.image_link
+        link.appendChild(img)
+
+        const ingredients = document.createElement('button')
+        ingredients.setAttribute('class', 'recipe-ingredients-open-button')
+        ingredients.setAttribute('onclick', 'openRecipeIngredients()')
+        ingredients.innerText = 'view ingredients'
+        card.appendChild(ingredients)
+        const ingredientsDiv = document.createElement('div')
+        ingredientsDiv.setAttribute('id', 'recipeIngredients')
+        ingredientsDiv.setAttribute('style', 'display:block;')
+        ingredientsDiv.className = 'recipe-ingredients-popup'
+        card.appendChild(ingredientsDiv)
+        const recipeIngredientsPopup = document.createElement('form')
+        recipeIngredientsPopup.className = 'recipe-ingredients-container'
+        recipeIngredientsPopup.innerHTML = 
+        ingredientsDiv.appendChild(recipeIngredientsPopup)
+        
         
 
         // const ingredientsToggle = document.createElement('div')
         // ingredientsToggle.setAttribute('id', 'ingredients-dropdown')
-        // recipeCard.appendChild(ingredientsToggle)
+        // card.appendChild(ingredientsToggle)
         // const ingredientsAtag = document.createElement('a')
         // ingredientsAtag.href = '#'
         // ingredientsAtag.className = 'dropdown-toggle'
@@ -46,6 +57,6 @@ class Recipe {
         // }
         // ingredientsContainer.appendChild(ingredientsUl)
         
-        document.querySelector('.recipe-card-container').appendChild(recipeCard)
+        document.querySelector('.recipe-card-container').appendChild(card)
     }
 }
