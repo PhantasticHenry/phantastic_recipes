@@ -23,14 +23,11 @@ class Recipe {
         ingredients.innerText = 'Ingredients'
         card.appendChild(ingredients)
 
-        const iSpan = document.createElement('span')
-        ingredients.appendChild(iSpan)
-
         const ingredientsDiv = document.createElement('div')
-        ingredientsDiv.setAttribute('id', 'recipeIngredients')
+        ingredientsDiv.setAttribute('id', 'recipeIngredients') // change this
         ingredientsDiv.setAttribute('class', 'recipe-ingredients-popup')
-        // ingredientsDiv.setAttribute('style', 'display:block;')
-        card.appendChild(ingredientsDiv)
+        // ingredients.appendChild(ingredientsDiv)
+        ingredients.appendChild(ingredientsDiv) // this needs
         const ingredientsPopup = document.createElement('form')
         ingredientsPopup.setAttribute('class', 'recipe-ingredients-container')
         ingredientsDiv.appendChild(ingredientsPopup)
