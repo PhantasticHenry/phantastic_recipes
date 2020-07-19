@@ -8,6 +8,7 @@ body, html {
 	height: 100% !important;
 }
 
+
 @media (min-width: 768px) {
 	.dropdown .dropdown-menu {
 	display: block;
@@ -289,6 +290,9 @@ header .intro-text {
 	padding: 10px;
 	color: white;
 	background-color: grey;
+}
+.form-container input {
+	border-radius: 5px;
 }
 
 /* Full-width input fields */
