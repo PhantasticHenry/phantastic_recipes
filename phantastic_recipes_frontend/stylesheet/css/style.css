@@ -19,6 +19,7 @@ body, html {
 	-o-transition: all 500ms ease-in;
 	transition: all 500ms ease-in;
 	z-index: 0;
+	font-size: 25px;
 }
 	
 .dropdown:hover .dropdown-menu {
@@ -42,8 +43,6 @@ body, html {
 	top: 0;
 	left: 0;
 	background: rgba(76, 175, 80, 0.3);
-	/* background-color: rgb(17, 17, 17);  */
-	/* opacity: .9; */
 	overflow-x: hidden;
 	transition: 0.5s;
 	padding-top: 60px;
@@ -117,7 +116,7 @@ h4 {
 	color: #333;
 }
 h5 {
-	text-transform: uppercase;
+	/* text-transform: uppercase; */
 	font-weight: 700;
 	line-height: 20px;
 }
@@ -202,7 +201,8 @@ header .intro-text {
 #recipes .recipe-card-container {
     display: flex;
     flex-flow: row wrap;
-    justify-content: space-around;
+	justify-content: space-around;
+	
 }
 #recipes .recipe-card {
 	display: flex;
@@ -349,22 +349,27 @@ header .intro-text {
 /* Recipe Ingredients */
 
 .recipe-ingredients-popup {
-	/* display: none; */
-	display: block;
+	display: none;
+	background-color: #a7c44c;
 	position: fixed;
-	bottom: 2%;
-	right: 32%;
-	border: 3px solid black;
+	padding: 30px;
+	bottom: 40%;
+	right: center;
+	/* right: 44.5%; */
+	/* border: 5px solid white; */
+	box-shadow: 5px 5px  white, -.5em 0 .4em green; /* more like a book */
 	z-index: 1;
-	color: black;
+	color: white;
+	font-size: 20px;
+	text-shadow: 1px 1px 2px green;
 }
 
 /* Add styles to the form container */
 .recipe-ingredients-container {
 	max-width: 600px;
-	padding: 10px;
+	/* padding: 10px; */
 	color: white;
-	background-color: grey;
+	/* background-color: grey; */
 }
 
 /* Full-width input fields */
@@ -393,12 +398,6 @@ header .intro-text {
 	cursor: pointer;
 	width: 100%;
 	margin-bottom:10px;
-	opacity: 0.8;
-}
-
-/* Add a red background color to the cancel/close button */
-.recipe-ingredients-container .cancel {
-	background-color: red;
 }
 
 /* Add some hover effects to buttons */
@@ -412,23 +411,23 @@ header .intro-text {
 	padding: 16px 20px;
 	border: none;
 	cursor: pointer;
-	opacity: 0.8;
+	opacity: 0.9;
 	position: relative;
 	
 	font-size: 15px;
 }
+.recipe-ingredients-open-button:hover {
+	color: #8eb640;
+}
 
 .recipe-ingredients-remove-button {
-	background-color: transparent;
-	color: black;
-	padding: 16px 20px;
+	background-color: green;
+	color: white;
 	border: none;
 	cursor: pointer;
 	opacity: 0.8;
-	position: relative;
-	bottom: 23px;
-	right: 28px;
-	width: 280px;
+	left: 200px;
+	
 }
 
 }
