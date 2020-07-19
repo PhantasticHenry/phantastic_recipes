@@ -47,8 +47,10 @@ function openRecipeIngredients(recipeId) {
     // recipeCardContainer.style.opacity = ".1";
 }
 // Close list of ingredients that bleong to recipe
-function closeRecipeIngredients() {
-    document.querySelector("#recipeIngredients").style.display = "none";
+function closeRecipeIngredients(recipeId) {
+    // document.querySelector(`#ingredientsPopup-${recipeId}`).style.display = "none";
+    document.querySelector(`#recipeIngredients-${recipeId}`).style.display = "none";
+    
     // const recipeCardContainer = document.querySelector(".recipe-card-container");    
     // recipeCardContainer.style.opacity = "1";
 }
