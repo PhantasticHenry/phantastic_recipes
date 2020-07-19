@@ -11,8 +11,8 @@ body, html {
 @media (min-width: 768px) {
 	.dropdown .dropdown-menu {
 	display: block;
-	/* opacity: 0; */
-	opacity: 1;
+	opacity: 0;
+	/* opacity: 1; */
 	-webkit-transition: all 500ms ease-in;
 	-moz-transition: all 500ms ease-in;
 	-ms-transition: all 500ms ease-in;
@@ -83,6 +83,7 @@ margin-left: 50px;
 
 h1, h2, h3, h4 {
 	font-family: 'Raleway', sans-serif;
+	text-shadow: 1px 1px 2px grey;
 }
 h2 {
 	font-weight: 400;
@@ -178,6 +179,7 @@ a:focus, .btn:focus, .btn:active:focus, .btn.active:focus, .btn.focus, .btn:acti
 	font-size: 10em;
 	font-weight: 400;
 	margin-top: 0;
+	text-shadow: 2px 3px 2px #8eb640;
 }
 .intro span {
 	color: #a7c44c;
@@ -193,6 +195,7 @@ header .intro-text {
 	padding-top: 200px;
 	padding-bottom: 50px;
 	text-align: center;
+	text-shadow: 1px 1px 2px grey;
 }
 /* Recipes Section */
 #recipes {
@@ -270,6 +273,7 @@ header .intro-text {
 
 /* The popup form - hidden by default */
 .form-popup {
+	border-radius: 25px;
 	display: none;
 	position: fixed;
 	bottom: 2%;
@@ -280,6 +284,7 @@ header .intro-text {
 
 /* Add styles to the form container */
 .form-container {
+	border-radius: 25px;
 	max-width: 600px;
 	padding: 10px;
 	color: white;
@@ -413,7 +418,7 @@ header .intro-text {
 	cursor: pointer;
 	opacity: 0.9;
 	position: relative;
-	
+	text-shadow: 1px 1px 2px grey;
 	font-size: 15px;
 }
 .recipe-ingredients-open-button:hover {
