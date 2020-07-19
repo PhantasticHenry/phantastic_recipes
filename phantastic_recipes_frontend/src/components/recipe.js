@@ -1,12 +1,12 @@
 class Recipe {
-    constructor({title, recipe_link, image_link, recipe_origin, recipe_type, ingredients}) {
-        Object.assign(this, { title, recipe_link, image_link, recipe_origin, recipe_type, ingredients })
+    constructor({id, title, recipe_link, image_link, recipe_origin, recipe_type, ingredients}) {
+        Object.assign(this, { id, title, recipe_link, image_link, recipe_origin, recipe_type, ingredients })
     }
 
     createRecipeCard() {
         const card = document.createElement('div')
-
-        card.className = 'recipe-card'
+        
+        card.setAttribute('class', 'recipe-card')
         const title = document.createElement('h3')
         title.innerHTML = this.title
         card.appendChild(title)
@@ -18,17 +18,19 @@ class Recipe {
         link.appendChild(img)
 
         const ingredients = document.createElement('div')
+        // ingredients.setAttribute('id', `recipeIngredients-${this.id}`)
         ingredients.setAttribute('class', 'recipe-ingredients-open-button')
-        ingredients.setAttribute('onclick', 'openRecipeIngredients()')
+        ingredients.setAttribute('onclick', `openRecipeIngredients(${this.id})`)
         ingredients.innerText = 'Ingredients'
         card.appendChild(ingredients)
 
         const ingredientsDiv = document.createElement('div')
-        ingredientsDiv.setAttribute('id', 'recipeIngredients') // change this
+        ingredientsDiv.setAttribute('id', `ingredientsPopup-${this.id}`) // change this
         ingredientsDiv.setAttribute('class', 'recipe-ingredients-popup')
         // ingredients.appendChild(ingredientsDiv)
         ingredients.appendChild(ingredientsDiv) // this needs
         const ingredientsPopup = document.createElement('form')
+        
         ingredientsPopup.setAttribute('class', 'recipe-ingredients-container')
         ingredientsDiv.appendChild(ingredientsPopup)
         //ingredients popup content
