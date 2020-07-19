@@ -1,5 +1,5 @@
 class Recipe {
-    constructor(title, recipe_link, image_link, recipe_origin, recipe_type, ingredients) {
+    constructor({title, recipe_link, image_link, recipe_origin, recipe_type, ingredients}) {
         Object.assign(this, { title, recipe_link, image_link, recipe_origin, recipe_type, ingredients })
     }
 
@@ -8,20 +8,24 @@ class Recipe {
 
         card.className = 'recipe-card'
         const title = document.createElement('h3')
-        title.innerHTML = this.title.title
+        title.innerHTML = this.title
         card.appendChild(title)
         const link = document.createElement('a')
-        link.href = this.title.recipe_link
+        link.href = this.recipe_link
         card.appendChild(link)
         const img = document.createElement('img')
-        img.src = this.title.image_link
+        img.src = this.image_link
         link.appendChild(img)
 
-        const ingredients = document.createElement('button')
+        const ingredients = document.createElement('div')
         ingredients.setAttribute('class', 'recipe-ingredients-open-button')
         ingredients.setAttribute('onclick', 'openRecipeIngredients()')
-        ingredients.innerText = 'view ingredients'
+        ingredients.innerText = 'Ingredients'
         card.appendChild(ingredients)
+
+        const iSpan = document.createElement('span')
+        ingredients.appendChild(iSpan)
+
         const ingredientsDiv = document.createElement('div')
         ingredientsDiv.setAttribute('id', 'recipeIngredients')
         ingredientsDiv.setAttribute('class', 'recipe-ingredients-popup')
@@ -32,12 +36,19 @@ class Recipe {
         ingredientsDiv.appendChild(ingredientsPopup)
         //ingredients popup content
         const ul = document.createElement('ul')
-        for(let ingredients of this.title.ingredients) {
+        for(let ingredients of this.ingredients) {
             const li = document.createElement('li')
             li.innerHTML = ingredients.name
             ul.appendChild(li)
         }
         ingredientsDiv.appendChild(ul)
+        //close ingredients popup
+        const close = document.createElement('button')
+        close.setAttribute('button', 'button')
+        close.setAttribute('class', 'btn cancel')
+        close.setAttribute('onclick', 'closeRecipeIngredients()')
+        close.innerText = 'Close'
+        ingredientsDiv.appendChild(close)
         
         
 
@@ -57,7 +68,7 @@ class Recipe {
         // ingredientCaret.appendChild(ingredientsContainer)
         // //class name for dropdown
         // const ingredientsUl = document.createElement('ul')
-        // for(let ingredient of this.title.ingredients) {
+        // for(let ingredient of this.ingredients) {
         //     let li = document.createElement('li')
         //     li.innerHTML = ingredient.name
         //     ingredientsUl.appendChild(li)
