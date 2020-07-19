@@ -4,8 +4,8 @@ class Recipe {
     }
 
     createRecipeCard() {
-
         const card = document.createElement('div')
+
         card.className = 'recipe-card'
         const title = document.createElement('h3')
         title.innerHTML = this.title.title
@@ -24,13 +24,20 @@ class Recipe {
         card.appendChild(ingredients)
         const ingredientsDiv = document.createElement('div')
         ingredientsDiv.setAttribute('id', 'recipeIngredients')
-        ingredientsDiv.setAttribute('style', 'display:block;')
-        ingredientsDiv.className = 'recipe-ingredients-popup'
+        ingredientsDiv.setAttribute('class', 'recipe-ingredients-popup')
+        // ingredientsDiv.setAttribute('style', 'display:block;')
         card.appendChild(ingredientsDiv)
-        const recipeIngredientsPopup = document.createElement('form')
-        recipeIngredientsPopup.className = 'recipe-ingredients-container'
-        recipeIngredientsPopup.innerHTML = 
-        ingredientsDiv.appendChild(recipeIngredientsPopup)
+        const ingredientsPopup = document.createElement('form')
+        ingredientsPopup.setAttribute('class', 'recipe-ingredients-container')
+        ingredientsDiv.appendChild(ingredientsPopup)
+        //ingredients popup content
+        const ul = document.createElement('ul')
+        for(let ingredients of this.title.ingredients) {
+            const li = document.createElement('li')
+            li.innerHTML = ingredients.name
+            ul.appendChild(li)
+        }
+        ingredientsDiv.appendChild(ul)
         
         
 
