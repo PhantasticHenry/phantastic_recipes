@@ -40,43 +40,16 @@ class Recipe {
             li.innerHTML = ingredients.name
             ul.appendChild(li)
         }
+
         ingredientsDiv.appendChild(ul)
         //close ingredients popup
         const close = document.createElement('button')
         // close.setAttribute('id', 'closePopup')
         close.setAttribute('type', 'button')
-        close.setAttribute('class', 'btn cancel')
+        close.setAttribute('class', 'recipe-ingredients-remove-button')
         close.setAttribute('onclick', `closeRecipeIngredients(${this.id})`)
         close.innerText = 'Close'
         ingredientsDiv.appendChild(close)
-        
-        
-        
-        
-        
-
-        // const ingredientsToggle = document.createElement('div')
-        // ingredientsToggle.setAttribute('id', 'ingredients-dropdown')
-        // card.appendChild(ingredientsToggle)
-        // const ingredientsAtag = document.createElement('a')
-        // ingredientsAtag.href = '#'
-        // ingredientsAtag.className = 'dropdown-toggle'
-        // ingredientsAtag.innerHTML = `Ingredients <br>`
-        // ingredientsToggle.appendChild(ingredientsAtag)
-        // const ingredientCaret = document.createElement('span')
-        // ingredientsAtag.setAttribute('onclick', 'openRecipeIngredients()')
-        // ingredientCaret.className = 'caret'
-        // ingredientsAtag.appendChild(ingredientCaret)
-        // const ingredientsContainer = document.createElement('div')
-        // ingredientCaret.appendChild(ingredientsContainer)
-        // //class name for dropdown
-        // const ingredientsUl = document.createElement('ul')
-        // for(let ingredient of this.ingredients) {
-        //     let li = document.createElement('li')
-        //     li.innerHTML = ingredient.name
-        //     ingredientsUl.appendChild(li)
-        // }
-        // ingredientsContainer.appendChild(ingredientsUl)
         
         document.querySelector('.recipe-card-container').appendChild(card)
     }
