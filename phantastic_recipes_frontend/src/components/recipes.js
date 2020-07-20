@@ -32,6 +32,13 @@ class Recipes {
         })
     }
 
+    createRecipeIngredientsArray(ingredients) {
+        let ingredientsArray = [];
+        for (let ingredient of ingredients) {
+            ingredientsArray.push(ingredient.name)
+        }
+        return ingredientsArray
+    }
 
 
     // getAndLoadRecipeIngredients() {
