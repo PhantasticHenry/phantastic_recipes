@@ -8,15 +8,13 @@ class Recipes {
 
     initBindingsAndEventListeners() {
         this.addRecipeForm = document.querySelector('#addRecipeForm')
-        // this.addRecipeButton = document.querySelector("#add-recipe-button")
-        // this.recipeTitle = document.querySelector("#title")
         this.addRecipeForm.addEventListener('submit', this.recipeFormValues.bind(this))
     }
     
     recipeFormValues(e) {
         e.preventDefault()
         
-        console.log("adapter log",this.adapter.createRecipe())
+        this.adapter.createRecipe()
     }
 
     fetchAndLoadRecipes() {
