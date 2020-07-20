@@ -40,6 +40,18 @@ class Recipes {
         return ingredientsArray
     }
 
+    createRecipes(recipe) {
+        for (let recipe of reicpes) {
+            const ingredients = this.createRecipeIngredientsArray(recipe.ingredients)
+            this.recipes.push(new Recipe(recipe.title, recipe.recipe_link, recipe.recipe_link, recipe.recipe_origin, recipe.recipe_type, ingredients))
+        }
+    }
+
+    renderRecipes() {        
+        for (let recipe of this.recipes) {
+            recipe.createRecipeCard()            
+        }
+    }
 
     // getAndLoadRecipeIngredients() {
     //     this.adapter.getRecipeIngredients(ingredient).then(json => console.log(json)
