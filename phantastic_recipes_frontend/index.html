@@ -32,9 +32,9 @@
         <div class="overlay">
           <div id="mySidenav" class="sidenav">
               <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-              <button class="open-button" onclick="openForm()">Add Recipe</button>
-              <div class="form-popup" id="myForm">
-                <form action="/action_page.php" class="form-container">
+              <button class="open-button" onclick="openRecipeForm()">Add Recipe</button>
+              <div id="recipeFormPopup" class="form-popup">
+                <form id="addRecipeForm" class="form-container">
                   <h1>Add Recipe</h1>
                   <!--  Add Recipe Form  -->
                   <label for="title"><b>Title</b></label>
@@ -55,8 +55,8 @@
                   <label for="ingredients"><b>Ingredients</b></label>
                   <input type="text" placeholder="(Example) - eggs, milk, bacon" name="ingredients" required>
 
-                  <button type="submit" class="btn">Add Recipe</button>
-                  <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+                  <button id="add-recipe-button" type="submit" class="btn">Add Recipe</button>
+                  <button type="button" class="btn cancel" onclick="closeRecipeForm()">Close</button>
                 </form>
               </div>
               <button class="open-button" onclick="openForm()">Remove Recipe</button>
@@ -79,7 +79,7 @@
   <div id="recipes" class="text-center">
       <div class="section-title">
         <h2>Recipes</h2>
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <span class="caret"></span></a>
+        <a class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">view all<br><span class="caret"></span></a>
           <div class="dropdown">
             <!-- <span>view all</span> -->
               <div class="dropdown-menu">
