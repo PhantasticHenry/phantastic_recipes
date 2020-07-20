@@ -6,6 +6,19 @@ class Recipes {
         this.fetchAndLoadRecipes();
     }
 
+    initBindingsAndEventListeners() {
+        this.addRecipeForm = document.querySelector('#addRecipeForm')
+        // this.addRecipeButton = document.querySelector("#add-recipe-button")
+        // this.recipeTitle = document.querySelector("#title")
+        this.addRecipeForm.addEventListener('submit', this.recipeFormValues.bind(this))
+    }
+    
+    recipeFormValues(e) {
+        e.preventDefault()
+        
+        console.log("adapter log",this.adapter.createRecipe())
+    }
+
     fetchAndLoadRecipes() {
         this.adapter.getRecipes().then(recipes => {
             recipes.forEach(recipe => this.recipes.push(new Recipe(recipe)))                        
@@ -14,24 +27,18 @@ class Recipes {
             this.renderRecipes()
         })
     }
-    
-    initBindingsAndEventListeners() {
-        this.addRecipForm = document.querySelector('#addRecipeForm')
-        this.addRecipForm.addEventListener('submit', this.addRecipe)
-    }
 
 
-    createRecipeIngredientsArray(ingredients) {
-        let ingredientsArray = [];
-        for (const ingredient of ingredients) {
-            ingredientsArray.push(ingredient.name);
-        }
-        return ingredientsArray;        
-    }
 
-    addRecipe(recipe) {
-        recipe.preventDefault()  
-    }
+
+    // createRecipeIngredientsArray(ingredients) {
+    //     let ingredientsArray = [];
+    //     for (const ingredient of ingredients) {
+    //         ingredientsArray.push(ingredient.name);
+    //     }
+    //     return ingredientsArray;        
+    // }
+
 
     renderRecipes() {        
         for (let recipe of this.recipes) {
