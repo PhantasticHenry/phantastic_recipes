@@ -7,6 +7,12 @@ class Recipes {
     }
 
     initBindingsAndEventListeners() {
+        this.recipeCardContainer = document.querySelector('.recipe-card-container')
+        this.viewAll = document.querySelector('#viewAll')
+        this.viewAll.addEventListener('click', () => {
+            this.hideOrShowElement(this.recipeCardContainer)
+            
+        })
         this.addRecipeForm = document.querySelector('#addRecipeForm')
         this.addRecipeForm.addEventListener('submit', this.recipeFormValues.bind(this))
     }
@@ -28,20 +34,16 @@ class Recipes {
 
 
 
-
-    // createRecipeIngredientsArray(ingredients) {
-    //     let ingredientsArray = [];
-    //     for (const ingredient of ingredients) {
-    //         ingredientsArray.push(ingredient.name);
-    //     }
-    //     return ingredientsArray;        
+    // getAndLoadRecipeIngredients() {
+    //     this.adapter.getRecipeIngredients(ingredient).then(json => console.log(json)
+    //     )
     // }
-
-
-    renderRecipes() {        
-        for (let recipe of this.recipes) {
-            recipe.createRecipeCard()            
-        }
-    }
+    // hideOrShowElement(selector) {
+    //     if (selector.style.display === ("hidden")) {
+    //         selector.style.display = ("hidden");
+    //     } else {
+    //         selector.style.display += "hidden";
+    //     }
+    // }
 
 }
