@@ -1,39 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     <!-- Favicons  -->
-<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
-<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
-<link rel="apple-touch-icon" sizes="72x72" href="img/apple-touch-icon-72x72.png">
-<link rel="apple-touch-icon" sizes="114x114" href="img/apple-touch-icon-114x114.png">
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="img/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="img/apple-touch-icon-114x114.png">
 
-<!-- Bootstrap -->
-<link rel="stylesheet" type="text/css"  href="stylesheet/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="stylesheet/fonts/font-awesome/css/font-awesome.css">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" type="text/css"  href="stylesheet/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="stylesheet/fonts/font-awesome/css/font-awesome.css">
 
-<!-- Stylesheet -->
-<link rel="stylesheet" type="text/css"  href="stylesheet/css/style.css">
-<link href="https://fonts.googleapis.com/css?family=Raleway:300,400,500,600,700" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Rochester" rel="stylesheet">
+    <!-- Stylesheet -->
+    <link rel="stylesheet" type="text/css"  href="stylesheet/css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,500,600,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Rochester" rel="stylesheet">
+    
     <title>Phantastic Recipes</title>
-</head>
-<body>
-  
-  
-
-  <!-- Header & Sidenav -->
+  </head>
+  <body>
+    <!-- Header & Sidenav -->
     <header id="header">
       <div class="intro">
         <div class="overlay">
           <div id="mySidenav" class="sidenav">
               <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
               <button class="open-button" onclick="openRecipeForm()">Add Recipe</button>
-              <div id="recipeFormPopup" class="form-popup">
+              <div id="recipeFormPopup" class="form-popup fade-in">
                 <form id="addRecipeForm" class="form-container">
                   <h1>Add Recipe</h1>
                   <!--  Add Recipe Form  -->
@@ -59,9 +57,8 @@
                   <button type="button" class="btn cancel" onclick="closeRecipeForm()">Close</button>
                 </form>
               </div>
-              <button class="open-button" onclick="openForm()">Remove Recipe</button>
+              <button id="ingredients-btn" class="open-button">Ingredients</button>
             </div>
-            
             <div id="main">
               <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; more</span>
             </div>
@@ -74,33 +71,29 @@
         </div>
       </div>
     </div>
-  </header>
-  <!-- Recipes Section -->
-  <div id="recipes" class="text-center">
-      <div class="section-title">
-        <h2>Recipes</h2>
-        <a class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">view all<br><span class="caret"></span></a>
-          <div class="dropdown">
-            <!-- <span>view all</span> -->
-              <div class="dropdown-menu">
-                <div class="recipe-card-container">
-                  <!-- <div> recipe-card </div> -->        
-                  <!-- <div> recipe-card </div> -->        
-                  <!-- <div> recipe-card </div> -->        
-                  <!-- ........................ -->        
-                </div>
-              </div>
+    </header>
+    <!-- Recipes Section -->
+    <div id="recipes" class="section-title text-center">
+      <h2>Recipes</h2>
+      <a class="dropdown-toggle">
+        <span id="viewAll">view all</span><br>
+        <span class="caret"></span>
+          <div class="recipe-card-container">
+            <!-- <div> recipe-card </div> -->        
+            <!-- <div> recipe-card </div> -->        
+            <!-- <div> recipe-card </div> -->        
+            <!-- ........................ -->        
           </div>
-      </div>
-  </div>
-  <button onclick="topFunction()" id="myBtn" title="Go to top">^</button>
-  
-  <script src="src/components/recipe.js"></script>
-  <script src="src/components/recipes.js"></script>
-  <script src="src/components/ingredients.js"></script>
-  <script src="src/components/app.js"></script>
-  <script src="src/adapters/RecipesAdapter.js"></script>  
-  <script src="src/index.js"></script>
-  <script src="src/scripts.js"></script>
-</body>
+    </div>
+    <button onclick="topFunction()" id="myBtn" title="Go to top">^</button>
+    
+    <script src="src/scripts.js"></script>
+    <script src="src/components/recipe.js"></script>
+    <script src="src/components/recipes.js"></script>
+    <script src="src/components/ingredients.js"></script>
+    <script src="src/components/app.js"></script>
+    <script src="src/adapters/IngredientsAdapter.js"></script>  
+    <script src="src/adapters/RecipesAdapter.js"></script>  
+    <script src="src/index.js"></script>
+  </body>
 </html>
