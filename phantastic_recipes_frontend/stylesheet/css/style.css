@@ -135,7 +135,7 @@ a {
 	padding: 20px;
 	color: #8eb640;
 }
-a:hover, a:focus {
+a:hover, a:focus, li:hover, li:focus{
 	text-decoration: none;
 	color: #222;
 }
@@ -440,13 +440,14 @@ header .intro-text {
 }
 
 #all-ingredients {
+	display: none;
 	background-color: olivedrab;
     color: white;
 	position: absolute;
 	top: 50%;
-	/* transform: translateY(-50%); */
+
 	opacity: 0.9;
-	top: 1%;
+	top: 15%;
     left: 20%;
 	font-size: 20px;
 	z-index: 1;
@@ -467,7 +468,7 @@ header .intro-text {
 	opacity:.9;
 	}
 }
-  
+
 @-moz-keyframes fadeIn {
 	0% {
 	opacity:0;
@@ -476,7 +477,7 @@ header .intro-text {
 	opacity:1;
 	}
 }
-  
+
 @-webkit-keyframes fadeIn {
 	0% {
 	opacity:0;
@@ -503,7 +504,7 @@ header .intro-text {
 	opacity:1;
 	}
 }
-/* .fade-out {
+.fade-out {
 	animation: fadeOut ease 2;
 	-webkit-animation: fadeOut ease 2;
 	-moz-animation: fadeOut ease 2;
@@ -553,5 +554,5 @@ header .intro-text {
 	100% {
 	opacity:0;
 	}
-  } */
+  }
 }
