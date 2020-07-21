@@ -5,14 +5,23 @@ class Recipes {
         this.initBindingsAndEventListeners();
         this.fetchAndLoadRecipes();
     }
-
+    
     initBindingsAndEventListeners() {
+        this.ingredientsBtn = document.querySelector('#ingredients-btn') //all ingredients
         this.recipeCardContainer = document.querySelector('.recipe-card-container')
         this.viewAll = document.querySelector('#viewAll')
-        this.viewAll.addEventListener('click', () => {
-            this.hideOrShowElement(this.recipeCardContainer)
+        this.recipeIngredientsContainer()
+
+        //bidings
+        this.ingredientsBtn.addEventListener('click', () => {
+            new Ingredients();
+            this.openClose('#all-ingredients');
+        }) 
+        
+        // this.viewAll.addEventListener('click', () => {
+        //     this.hideOrShowElement(this.recipeCardContainer)
             
-        })
+        // })
         this.addRecipeForm = document.querySelector('#addRecipeForm')
         this.addRecipeForm.addEventListener('submit', this.recipeFormValues.bind(this))
     }
@@ -40,12 +49,12 @@ class Recipes {
         return ingredientsArray
     }
 
-    createRecipes(recipe) {
-        for (let recipe of reicpes) {
-            const ingredients = this.createRecipeIngredientsArray(recipe.ingredients)
-            this.recipes.push(new Recipe(recipe.title, recipe.recipe_link, recipe.recipe_link, recipe.recipe_origin, recipe.recipe_type, ingredients))
-        }
-    }
+    // createRecipes(recipe) {
+    //     for (let recipe of recipes) {
+    //         const ingredients = this.createRecipeIngredientsArray(recipe.ingredients)
+    //         this.recipes.push(new Recipe(recipe.title, recipe.recipe_link, recipe.recipe_link, recipe.recipe_origin, recipe.recipe_type, ingredients))
+    //     }
+    // }
 
     renderRecipes() {        
         for (let recipe of this.recipes) {
@@ -53,16 +62,21 @@ class Recipes {
         }
     }
 
-    // getAndLoadRecipeIngredients() {
-    //     this.adapter.getRecipeIngredients(ingredient).then(json => console.log(json)
-    //     )
+    recipeIngredientsContainer() {
+        const div = document.createElement('div')
+        const btn = document.querySelector('#recipes')
+        btn.appendChild(div)
+        div.setAttribute('id', 'all-ingredients')
+        div.setAttribute('class', 'open-button')
+    }
+    
+    // ingredientsContainer() {
+    //     const container = document.createElement('div')
+    //     container.setAttribute('class', 'container')
+    //     container.innerText = 'testing'
     // }
-    // hideOrShowElement(selector) {
-    //     if (selector.style.display === ("hidden")) {
-    //         selector.style.display = ("hidden");
-    //     } else {
-    //         selector.style.display += "hidden";
-    //     }
-    // }
+    openClose(id) {
+        document.querySelector(id).style.display === "none" ? document.querySelector(`#all-ingredients`).style.display = "block" : document.querySelector(`#all-ingredients`).style.display = "none";
+    }
 
 }
