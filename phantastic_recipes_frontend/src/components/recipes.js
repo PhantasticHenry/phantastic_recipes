@@ -7,32 +7,57 @@ class Recipes {
     }
     
     initBindingsAndEventListeners() {
-        this.allIngredientsBtn = document.querySelector('#ingredients-btn') //all ingredients
-        this.recipeCardContainer = document.querySelector('.recipe-card-container')
-        // ingredientsBtn.setAttribute('onclick', `openRecipeIngredients(${this.id})`)
-        // this.ingredientsBtn = document.querySelector(`#openRecipeIngredients(${this.id})`)
-        this.viewAll = document.querySelector('#viewAll')
-        this.recipeIngredientsContainer()
 
-        // all ingredients
-        this.allIngredientsBtn.addEventListener('click', function() {
-            this.openClose('#all-ingredients');
+        this.viewAll = document.querySelector('#viewAll')
+
+        this.viewAll.addEventListener('click', function() {      
+            this.toggleCardContainer();
         }.bind(this))
+
+        
+        
+        // this.allIngredientsBtn = document.querySelector('#ingredients-btn') //all ingredients
+        // this.recipeCardContainer = document.querySelector('.recipe-card-container')
+        // // ingredientsBtn.setAttribute('onclick', `openRecipeIngredients(${this.id})`)
+        // // this.ingredientsBtn = document.querySelector(`#openRecipeIngredients(${this.id})`)
+        // this.viewAll = document.querySelector('#viewAll')
+        // this.recipeIngredientsContainer()
+
+        // this.viewAll.addEventListener('click', this.hideOrShowElement('dropdown-toggle'))
+
+        // // all ingredients
+        // this.allIngredientsBtn.addEventListener('click', function() {
+        //     this.openClose('#all-ingredients');
+        // }.bind(this))
 
         // recipe card container
         
-        // this.viewAll.addEventListener('click', () => {
-            //     this.hideOrShowElement(this.recipeCardContainer)
-            
-            // })
+        // this.viewAll.addEventListener('click', function() {
+        //     this.recipeCardContainer.openClose();
+        // })
             // this.addRecipeForm = document.querySelector('#addRecipeForm')
             // this.addRecipeForm.addEventListener('submit', this.recipeFormValues).bind(this)
         }
+        
         
     appends() {
         this.viewAll.appendChild(this.recipeCardContainer)
     }
     
+    toggleHide(element) {
+        if (element.classList.contains("hidden")) {
+            element.classList.remove("hidden");
+        } else {
+            element.className += " hidden";
+        }
+    }
+    
+    
+    toggleCardContainer() {
+        const container = document.querySelector('#card-container');
+        this.openClose('#card-container');
+    }
+            
     fetchAndLoadRecipes() {
         this.adapter.getRecipes().then(recipes => {
             recipes.forEach(recipe => this.recipes.push(new Recipe(recipe)))                        
@@ -42,13 +67,13 @@ class Recipes {
         })
     }
     
-    createRecipeIngredientsArray(ingredients) {
-        let ingredientsArray = [];
-        for (let ingredient of ingredients) {
-            ingredientsArray.push(ingredient.name)
-        }
-        return ingredientsArray
-    }
+    // createRecipeIngredientsArray(ingredients) {
+    //     let ingredientsArray = [];
+    //     for (let ingredient of ingredients) {
+    //         ingredientsArray.push(ingredient.name)
+    //     }
+    //     return ingredientsArray
+    // }
     
     // createRecipes(recipe) {
     //     for (let recipe of recipes) {
@@ -62,7 +87,6 @@ class Recipes {
             recipe.createRecipeCard()            
         }
     }
-    
     recipeIngredientsContainer() {
         const div = document.createElement('div')
         const btn = document.querySelector('#recipes')
@@ -79,7 +103,7 @@ class Recipes {
     // }
 
     openClose(id) {
-        document.querySelector(id).style.display === "none" ? document.querySelector(id).style.display = "block" : document.querySelector(id).style.display = "none";
+        document.querySelector(id).style.display === "none" ? document.querySelector(id).style.display = "flex" : document.querySelector(id).style.display = "none";
     }
 
 }
