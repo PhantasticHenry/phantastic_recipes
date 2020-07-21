@@ -55,7 +55,7 @@ class Recipes {
     
     toggleCardContainer() {
         const container = document.querySelector('#card-container');
-        this.openClose('#card-container');
+        this.toggleDisplay('#card-container');
     }
             
     fetchAndLoadRecipes() {
@@ -102,7 +102,7 @@ class Recipes {
     //     container.innerText = 'testing'
     // }
 
-    openClose(id) {
+    toggleDisplay(id) {
         document.querySelector(id).style.display === "none" ? document.querySelector(id).style.display = "flex" : document.querySelector(id).style.display = "none";
     }
 
