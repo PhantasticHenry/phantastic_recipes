@@ -1,6 +1,7 @@
 class Recipes {
     constructor() {
         this.recipes = [];
+        this.recipesIngredients = [];
         this.adapter = new RecipesAdapter();
         this.initBindingsAndEventListeners();
         this.fetchAndLoadRecipes();
@@ -13,9 +14,8 @@ class Recipes {
         this.viewAll.addEventListener('click', function() {      
             this.toggleCardContainer();
         }.bind(this))
+        
 
-        
-        
         // this.allIngredientsBtn = document.querySelector('#ingredients-btn') //all ingredients
         // this.recipeCardContainer = document.querySelector('.recipe-card-container')
         // // ingredientsBtn.setAttribute('onclick', `openRecipeIngredients(${this.id})`)
@@ -67,6 +67,23 @@ class Recipes {
         })
     }
     
+    renderRecipes() {        
+        for (let recipe of this.recipes) {
+            recipe.createRecipeCard()            
+        }
+    }
+    recipeIngredientsContainer() {
+        const div = document.createElement('div')
+        const btn = document.querySelector('#recipes')
+        btn.appendChild(div)
+        div.setAttribute('id', 'all-ingredients')
+        div.setAttribute('class', 'open-button fade-in')
+        new Ingredients();
+    }
+    
+    toggleDisplay(id) {
+        document.querySelector(id).style.display === "none" ? document.querySelector(id).style.display = "flex" : document.querySelector(id).style.display = "none";
+    }
     // createRecipeIngredientsArray(ingredients) {
     //     let ingredientsArray = [];
     //     for (let ingredient of ingredients) {
@@ -82,28 +99,10 @@ class Recipes {
     //     }
     // }
             
-    renderRecipes() {        
-        for (let recipe of this.recipes) {
-            recipe.createRecipeCard()            
-        }
-    }
-    recipeIngredientsContainer() {
-        const div = document.createElement('div')
-        const btn = document.querySelector('#recipes')
-        btn.appendChild(div)
-        div.setAttribute('id', 'all-ingredients')
-        div.setAttribute('class', 'open-button fade-in')
-        new Ingredients();
-    }
-    
-                // ingredientsContainer() {
-                    //     const container = document.createElement('div')
-                    //     container.setAttribute('class', 'container')
+    // ingredientsContainer() {
+        //     const container = document.createElement('div')
+        //     container.setAttribute('class', 'container')
     //     container.innerText = 'testing'
     // }
-
-    toggleDisplay(id) {
-        document.querySelector(id).style.display === "none" ? document.querySelector(id).style.display = "flex" : document.querySelector(id).style.display = "none";
-    }
-
 }
+
