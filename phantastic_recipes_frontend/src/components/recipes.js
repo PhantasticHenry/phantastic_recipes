@@ -11,13 +11,12 @@ class Recipes {
     }
     
     initBindingsAndEventListeners() {
-        
         this.viewAll.addEventListener('click', this.toggleCardContainer.bind(this));
         
         this.addRecipeBtn.addEventListener('click', function(event) {
             event.preventDefault();
-            
             this.recipesAdapter.createRecipe(event.target.parentElement);
+            toggleDisplay('#addRecipeForm');
         }.bind(this))
     }
 
@@ -26,7 +25,6 @@ class Recipes {
         this.viewAll.appendChild(this.recipeCardContainer)
     }
 
-    
     toggleHidden(element) {
         if (element.classList.contains("hidden")) {
             element.classList.remove("hidden");
@@ -34,7 +32,6 @@ class Recipes {
             element.className += " hidden";
         }
     }
-    
     
     toggleCardContainer() {
         this.toggleDisplay('#card-container');
@@ -63,9 +60,9 @@ class Recipes {
         new Ingredients();
     }
     
-    toggleDisplay(id) {
-        document.querySelector(id).style.display === "none" ? document.querySelector(id).style.display = "flex" : document.querySelector(id).style.display = "none";
-    }
+    // toggleDisplay(id) {
+    //     document.querySelector(id).style.display === "none" ? document.querySelector(id).style.display = "flex" : document.querySelector(id).style.display = "none";
+    // }
 
 
 }
