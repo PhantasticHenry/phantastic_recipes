@@ -13,6 +13,7 @@ class Recipes {
     
     initBindingsAndEventListeners() {
         this.viewAll.addEventListener('click', this.toggleCardContainer.bind(this));
+        this.allIngredients.addEventListener('click', this.toggleListOfIngredients.bind(this));
         
         this.addRecipeBtn.addEventListener('click', function(event) {
             event.preventDefault();
@@ -20,10 +21,6 @@ class Recipes {
             toggleDisplay('#addRecipeForm');
         }.bind(this))
 
-        this.allIngredients.addEventListener('click', this.toggleListOfIngredients.bind(this));
-        // this.allIngredients.addEventListener('click', function() {
-        //     toggleDisplay('#all-ingredients')
-        // }.bind(this))
     }
 
     toggleHidden(element) {
@@ -34,10 +31,7 @@ class Recipes {
         }
     }
     
-    toggleCardContainer() {
-        toggleDisplay('#card-container');
-    }
-            
+    
     fetchAndLoadRecipes() {
         this.recipesAdapter.getRecipes().then(recipes => {
             recipes.forEach(recipe => this.recipes.push(new Recipe(recipe)))                        
@@ -54,6 +48,10 @@ class Recipes {
     }
     toggleListOfIngredients() {
         toggleDisplay('#all-ingredients');
+    }
+
+    toggleCardContainer() {
+        toggleDisplay('#card-container');
     }
     
     // toggleDisplay(id) {
