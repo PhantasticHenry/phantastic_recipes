@@ -37,7 +37,8 @@ body, html {
 }
 	
 .sidenav {
-	height: 42.5%;
+	height: 44%;
+	border-bottom-right-radius: 25px;
 	width: 0;
 	position: absolute;
 	z-index: 1;
@@ -441,6 +442,7 @@ header .intro-text {
 
 #all-ingredients {
 	display: none;
+	border-radius: 25px;
 	background-color: olivedrab;
     color: white;
 	position: absolute;
