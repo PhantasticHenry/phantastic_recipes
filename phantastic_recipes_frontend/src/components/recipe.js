@@ -2,55 +2,64 @@ class Recipe {
     constructor({id, title, recipe_link, image_link, recipe_origin, recipe_type, ingredients}) {
         Object.assign(this, { id, title, recipe_link, image_link, recipe_origin, recipe_type, ingredients })
     }
-
+    
     createRecipeCard() {
         const card = document.createElement('div')
+        const title = document.createElement('h3')
+        const link = document.createElement('a')
+        const img = document.createElement('img')
+        const ingredientsBtn = document.createElement('div')
+        const ingredientsContainer = document.createElement('div')
+        const ingredientsPopup = document.createElement('div')
+        const ul = document.createElement('ul')
+        const close = document.createElement('button')
+        // const viewAll = document.querySelector('#viewAll')
+        // viewAll.appendChild(ingredientsContainer)
         
         card.setAttribute('class', 'recipe-card')
-        const title = document.createElement('h3')
+        ingredientsBtn.setAttribute('id', `recipeIngredients-${this.id}`)
+        ingredientsBtn.setAttribute('class', 'recipe-ingredients-open-button')
+        ingredientsBtn.setAttribute('onclick', `openRecipeIngredients(${this.id})`)
+        //dry up ingredietns list code 
+
+        // console.log('testing', `${recipes.toggleDisplay()}`);
+        
         title.innerHTML = this.title
-        card.appendChild(title)
-        const link = document.createElement('a')
         link.href = this.recipe_link
-        card.appendChild(link)
-        const img = document.createElement('img')
         img.src = this.image_link
+        card.appendChild(title)
+        card.appendChild(link)
         link.appendChild(img)
-
-        const ingredients = document.createElement('div')
-        ingredients.setAttribute('id', `recipeIngredients-${this.id}`)
-        ingredients.setAttribute('class', 'recipe-ingredients-open-button')
-        ingredients.setAttribute('onclick', `openRecipeIngredients(${this.id})`)
-        ingredients.innerText = 'Ingredients'
-        card.appendChild(ingredients)
-
-        const ingredientsDiv = document.createElement('div')
-        ingredientsDiv.setAttribute('id', `ingredientsPopup-${this.id}`) // change this
-        ingredientsDiv.setAttribute('class', 'recipe-ingredients-popup')
-        // ingredients.appendChild(ingredientsDiv)
-        ingredients.appendChild(ingredientsDiv) // this needs
-        const ingredientsPopup = document.createElement('form')
+        
+        ingredientsBtn.innerText = 'Ingredients'
+        card.appendChild(ingredientsBtn)
+        
+        ingredientsContainer.setAttribute('id', `ingredientsPopup-${this.id}`) // change this
+        ingredientsContainer.setAttribute('class', 'recipe-ingredients-popup')
+        // ingredients.appendChild(ingredientsContainer)
+        card.appendChild(ingredientsContainer) // this needs
         
         ingredientsPopup.setAttribute('class', 'recipe-ingredients-container')
-        ingredientsDiv.appendChild(ingredientsPopup)
+        ingredientsBtn.appendChild(ingredientsPopup)
+        // ingredientsContainer.appendChild(ingredientsPopup)
         //ingredients popup content
-        const ul = document.createElement('ul')
         for(let ingredients of this.ingredients) {
             const li = document.createElement('li')
             li.innerHTML = ingredients.name
             ul.appendChild(li)
         }
 
-        ingredientsDiv.appendChild(ul)
+        ingredientsContainer.appendChild(ul)
         //close ingredients popup
-        const close = document.createElement('button')
         // close.setAttribute('id', 'closePopup')
         close.setAttribute('type', 'button')
+        // close.setAttribute('id', 'closeIngredients')
         close.setAttribute('class', 'recipe-ingredients-remove-button')
-        close.setAttribute('onclick', `closeRecipeIngredients(${this.id})`)
+        close.addEventListener('click', () => {           
+            document.getElementById(`ingredientsPopup-${this.id}`).style.display = "none"
+        })
         close.innerText = 'Close'
-        ingredientsDiv.appendChild(close)
-        
+        ingredientsContainer.appendChild(close)
         document.querySelector('.recipe-card-container').appendChild(card)
     }
 }
