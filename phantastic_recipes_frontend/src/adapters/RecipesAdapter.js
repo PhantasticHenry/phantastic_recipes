@@ -16,12 +16,6 @@ class RecipesAdapter {
                 "Accept": "appplication/json"
             },
             body: JSON.stringify({
-                // title: form[0].value,
-                // recipe_link: form[1].value,
-                // image_link: form[2].value,
-                // recipe_origin: form[3].value,
-                // recipe_type: form[4].value,
-                // ingredients: ingredients
                 title: titleCase(form[0].value),
                 recipe_link: form[1].value,
                 image_link: form[2].value,
