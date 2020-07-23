@@ -2,23 +2,30 @@ class Recipes {
     constructor() {
         this.recipes = [];
         this.recipesIngredients = [];
-        this.adapter = new RecipesAdapter();
+        this.recipesAdapter = new RecipesAdapter();
+        this.viewAll = document.querySelector('#viewAll')
+        this.addRecipeBtn = document.querySelector('#add-recipe-button')
+        // this.form = document.querySelector('#addRecipeForm')
         this.initBindingsAndEventListeners();
         this.fetchAndLoadRecipes();
     }
     
     initBindingsAndEventListeners() {
-
-        this.viewAll = document.querySelector('#viewAll')
-        this.viewAll.addEventListener('click', this.toggleCardContainer.bind(this));
-
-
-    }
         
+        this.viewAll.addEventListener('click', this.toggleCardContainer.bind(this));
+        
+        this.addRecipeBtn.addEventListener('click', function(event) {
+            event.preventDefault();
+            
+            this.recipesAdapter.createRecipe(event.target.parentElement);
+        }.bind(this))
+    }
+
         
     appends() {
         this.viewAll.appendChild(this.recipeCardContainer)
     }
+
     
     toggleHidden(element) {
         if (element.classList.contains("hidden")) {
@@ -34,7 +41,7 @@ class Recipes {
     }
             
     fetchAndLoadRecipes() {
-        this.adapter.getRecipes().then(recipes => {
+        this.recipesAdapter.getRecipes().then(recipes => {
             recipes.forEach(recipe => this.recipes.push(new Recipe(recipe)))                        
         })
         .then(() => {
@@ -59,6 +66,7 @@ class Recipes {
     toggleDisplay(id) {
         document.querySelector(id).style.display === "none" ? document.querySelector(id).style.display = "flex" : document.querySelector(id).style.display = "none";
     }
+
 
 }
 
