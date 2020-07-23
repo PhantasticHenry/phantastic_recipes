@@ -3,9 +3,10 @@ class Recipes {
         this.recipes = [];
         this.recipesIngredients = [];
         this.recipesAdapter = new RecipesAdapter();
+        this.listOfIngredients = new Ingredients();
         this.viewAll = document.querySelector('#viewAll')
         this.addRecipeBtn = document.querySelector('#add-recipe-button')
-        // this.form = document.querySelector('#addRecipeForm')
+        this.allIngredients = document.querySelector('#ingredients-btn')
         this.initBindingsAndEventListeners();
         this.fetchAndLoadRecipes();
     }
@@ -18,11 +19,11 @@ class Recipes {
             this.recipesAdapter.createRecipe(event.target.parentElement);
             toggleDisplay('#addRecipeForm');
         }.bind(this))
-    }
 
-        
-    appends() {
-        this.viewAll.appendChild(this.recipeCardContainer)
+        this.allIngredients.addEventListener('click', this.toggleListOfIngredients.bind(this));
+        // this.allIngredients.addEventListener('click', function() {
+        //     toggleDisplay('#all-ingredients')
+        // }.bind(this))
     }
 
     toggleHidden(element) {
@@ -34,7 +35,7 @@ class Recipes {
     }
     
     toggleCardContainer() {
-        this.toggleDisplay('#card-container');
+        toggleDisplay('#card-container');
     }
             
     fetchAndLoadRecipes() {
@@ -51,13 +52,8 @@ class Recipes {
             recipe.createRecipeCard()            
         }
     }
-    recipeIngredientsContainer() {
-        const div = document.createElement('div')
-        const btn = document.querySelector('#recipes')
-        btn.appendChild(div)
-        div.setAttribute('id', 'all-ingredients')
-        div.setAttribute('class', 'open-button fade-in')
-        new Ingredients();
+    toggleListOfIngredients() {
+        toggleDisplay('#all-ingredients');
     }
     
     // toggleDisplay(id) {
