@@ -11,14 +11,17 @@ class Recipes {
         // this.ingredientsContainer = document.querySelector('ingredients-container')
         this.initBindingsAndEventListeners();
         this.fetchAndLoadRecipes();
-        this.getIngredientRecipes();
+        this.handleIngredientRecipes();
     }
     
     initBindingsAndEventListeners() {
-        this.viewAll.addEventListener('click', this.toggleCardContainer.bind(this));
+        // this.viewAll.addEventListener('click', this.toggleCardContainer.bind(this));
+        this.viewAll.addEventListener('click', function() {
+            this.renderRecipes(this.recipes);
+            this.toggleCardContainer();
+        }.bind(this))
+
         this.ingredientsBtn.addEventListener('click', this.toggleIngredientsSelect.bind(this));
-        // this.ingredientsBtn.addEventListener('click', this.toggleListOfIngredients.bind(this));
-        //not sure how to create ingredient recipes cards
 
         this.addRecipeBtn.addEventListener('click', function(event) {
             event.preventDefault();
@@ -26,30 +29,18 @@ class Recipes {
             toggleDisplay('#addRecipeForm');
         }.bind(this))
 
-        addEventListener('onchange', function(e) {
-            console.log(e.target)
-            
-        })
         this.ingredientsSelect.addEventListener('change', function(e) {
             const ingredient = e.target.value;
             // debugger
-            this.getIngredientRecipes(ingredient);
-            console.log(this.ingredientRecipes);
-            
+            this.handleIngredientRecipes(ingredient);
+            this.renderRecipes(this.ingredientRecipes);
+            console.log("test");
             
         }.bind(this))
-       
-        // not working
-        // this.listOfIngredients.addEventListener('click', function(event) {
-        //     let ingredient = event.target;
-        //     this.renderRecipesByIngredient(ingredient);
-        // })
-
+        
+        
     }
 
-    handleIngredientClick(e) {
-        const li = e.target
-    }
     
     
     fetchAndLoadRecipes() {
@@ -57,12 +48,13 @@ class Recipes {
             recipes.forEach(recipe => this.recipes.push(new Recipe(recipe)))                        
         })
         .then(() => {
-            this.renderRecipes()
+            this.renderRecipes(this.recipes)
         })
     }
     
-    renderRecipes() {        
-        for (let recipe of this.recipes) {
+    renderRecipes(recipes) {
+        this.clearContainer('#card-container');     
+        for (let recipe of recipes) {
             recipe.createRecipeCard()            
         }
     }
@@ -77,13 +69,26 @@ class Recipes {
         toggleDisplay('#card-container');
     }
 
-    getIngredientRecipes(ingredient) {
+    handleIngredientRecipes(ingredient) {
+        this.clearContainer('#card-container');
         this.ingredientRecipes = [];
         for(let recipe of this.recipes) {
             for(let recipeIngredient of recipe.ingredients) {
                 (recipeIngredient.id == ingredient) && this.ingredientRecipes.push(recipe)
             }
         }
+    }
+
+    clearContainer(element) {
+        document.querySelector(element).innerHTML = ""
+    }
+
+    createRecipeIngredientsArray(ingredients) {
+        const ingredientsArray = [];
+        for (const ingredient of ingredients) {
+            ingredientsArray.push(ingredient)
+        }
+        return ingredientsArray
     }
 
 }
