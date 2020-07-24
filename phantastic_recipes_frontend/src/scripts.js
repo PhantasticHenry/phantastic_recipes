@@ -10,12 +10,24 @@ scrollFunction = () => {
     mybutton.style.display = "none";
     }
 }
-
 // Scrolls to top of page on click
 topFunction = () => {
     document.body.scrollTop = 0; // For Safari
     document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
 }
+
+toggleHidden = (element) => {
+    if (element.classList.contains("hidden")) {
+        element.classList.remove("hidden");
+    } else {
+        element.className += " hidden";
+    }
+}
+
+toggleDisplay = (id) => {
+    document.querySelector(id).style.display === "none" ? document.querySelector(id).style.display = "flex" : document.querySelector(id).style.display = "none";
+}
+
 // Opens form to add recipe
 openRecipeForm = () => {
     document.querySelector("#recipeFormPopup").style.display = "block";
@@ -38,18 +50,14 @@ closeNav = () => {
     document.body.style.backgroundColor = "white";
 }
 // Open list of ingredients that belong to recipe
-openRecipeIngredients = (recipeId) => { 
-    document.querySelector(`#ingredientsPopup-${recipeId}`).style.display = "block";
-}
+// openRecipeIngredients = (recipeId) => { 
+//     document.querySelector(`#ingredientsPopup-${recipeId}`).style.display = "block";
+// }
 // Close list of ingredients that bleong to recipe
-closeRecipeIngredients = (recipeId) => {
-    document.querySelector(`#ingredientsPopup-${recipeId}`).style.display = "none";
-}
+// closeRecipeIngredients = (recipeId) => {
+//     document.querySelector(`#ingredientsPopup-${recipeId}`).style.display = "none";
+// }
 
-openClose = () => {
-    // document.querySelector(`${id}`).style.display === "block" ? document.querySelector(`#${id}`).style.display = "none" : document.querySelector(`#${id}`).style.display = "block"
-    document.querySelector(`#all-ingredients`).style.display = "block";
-}
 
 titleCase = (str) => {
     str = str.toLowerCase().split(' ');
@@ -59,18 +67,19 @@ titleCase = (str) => {
     return str.join(' ');
 };
 
-dropDownMenu = () => {
-    (".dropdown").focusin( function (){
-        (this).find(".dropdown-menu").each(function(){
-            (this).css({"display":'block','opacity':'1','top':'60px'}); 
-        });
-    });
+// dropDownMenu = () => {
+//     (".dropdown").focusin( function (){
+//         (this).find(".dropdown-menu").each(function(){
+//             (this).css({"display":'block','opacity':'1','top':'60px'}); 
+//         });
+//     });
     
-    (".dropdown").focusout( function (){
-    (this).find(".dropdown-menu").each(function(){
-        (this).css({"display":'block','opacity':'0','top':'0px'}); 
-    });
-});
+//     (".dropdown").focusout( function (){
+//     (this).find(".dropdown-menu").each(function(){
+//         (this).css({"display":'block','opacity':'0','top':'0px'}); 
+//     });
+// });
+// };
 
 
     
@@ -78,4 +87,3 @@ dropDownMenu = () => {
     //  alert("js working"); 
     // });
     
-};
