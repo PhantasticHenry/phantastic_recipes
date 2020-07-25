@@ -454,6 +454,36 @@ header .intro-text {
 	font-size: 20px;
 	z-index: 1;
 }
+.select {
+	display: none;
+	border-bottom-left-radius: 25px;
+	border-bottom-right-radius: 25px;
+	background-color: olivedrab;
+    color: white;
+	position: absolute;
+	top: 50%;
+	width: fit-content;
+	opacity: 0.9;
+	top: 15%;
+    left: 20%;
+	font-size: 20px;
+	z-index: 1;
+}
+
+.ingredient-recipes {
+	display: flex;
+	border-radius: 25px;
+	background-color: olivedrab;
+    color: white;
+	position: absolute;
+	top: 50%;
+
+	opacity: 0.9;
+	top: 20%;
+    left: 43%;
+	font-size: 20px;
+	z-index: 1;
+}
 
 .fade-in {
 	animation: fadeIn ease 1.5s;
