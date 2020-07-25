@@ -9,7 +9,6 @@ class RecipesAdapter {
     
     createRecipe(form) {
         return fetch(`${this.baseUrl}`, {
-            
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -24,7 +23,8 @@ class RecipesAdapter {
                 ingredients: form[5].value.split(', ')
             })
         })
-        .then(res => res.json()
-        ).catch((error) => alert(res.message))
+        .then(res => res.json())
+        .catch((error) => alert(res.message))
     }
+
 }
