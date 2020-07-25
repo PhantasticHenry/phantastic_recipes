@@ -9,41 +9,39 @@ body, html {
 }
 
 
-@media (min-width: 768px) {
+/* @media (min-width: 768px) {
 	.dropdown .dropdown-menu {
 	display: block;
 	opacity: 0;
 	/* opacity: 1; */
-	-webkit-transition: all 500ms ease-in;
+	/* -webkit-transition: all 500ms ease-in;
 	-moz-transition: all 500ms ease-in;
 	-ms-transition: all 500ms ease-in;
 	-o-transition: all 500ms ease-in;
 	transition: all 500ms ease-in;
 	z-index: 0;
 	font-size: 25px;
-}
-	
+} */ 
+/* 	
 .dropdown:hover .dropdown-menu {
 	z-index: 0;
 	display: block;
 	opacity: 1;
 	top: 60px;
 	background-color: #f9f9f9;
-}
+} */
 	
-.vrau{
+/* .vrau{
 	display:block;
 	opacity:1;
-}
+} */
 	
 .sidenav {
-	height: 44%;
+	height: 42.6%;
 	border-bottom-right-radius: 25px;
 	width: 0;
 	position: absolute;
 	z-index: 1;
-	top: 0;
-	left: 0;
 	background: rgba(76, 175, 80, 0.3);
 	overflow-x: hidden;
 	transition: 0.5s;
@@ -72,15 +70,15 @@ font-size: 36px;
 margin-left: 50px;
 }
 
+@media screen and (max-height: 450px) {
+.sidenav {padding-top: 15px;}
+.sidenav a {font-size: 18px;}
+}
+
 #main {
 	position: absolute;
 	transition: margin-left .5s;
 	padding: 16px;
-}
-
-@media screen and (max-height: 450px) {
-.sidenav {padding-top: 15px;}
-.sidenav a {font-size: 18px;}
 }
 
 h1, h2, h3, h4 {
@@ -458,7 +456,8 @@ header .intro-text {
 	display: none;
 	border-bottom-left-radius: 25px;
 	border-bottom-right-radius: 25px;
-	background-color: olivedrab;
+	/* background-color: olivedrab; */
+	background:#a7c44c;
     color: white;
 	position: absolute;
 	top: 50%;

@@ -29,6 +29,7 @@ class Recipes {
         this.addRecipeBtn.addEventListener('click', function(event) {
             event.preventDefault();
             this.recipesAdapter.createRecipe(event.target.parentElement);
+            toggleDisplay('#addRecipeForm');
         }.bind(this))
 
         this.ingredientsSelect.addEventListener('change', function(e) {
@@ -40,8 +41,6 @@ class Recipes {
             // toggleDisplay('#card-container');
 
         }.bind(this))
-        
-     
         
     }
     

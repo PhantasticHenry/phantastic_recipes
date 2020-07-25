@@ -14,10 +14,10 @@ class RecipesController < ApplicationController
 
     def create
         recipe = Recipe.new(recipe_params)
-        # byebug
         ingredients = params[:ingredients].map { |ingredient| Ingredient.find_or_create_by(name: ingredient) }
         recipe.ingredients << ingredients
-        recipe.save
+        # byebug
+        # recipe.save
         render json: recipe
     end
 

@@ -37,18 +37,25 @@ closeRecipeForm = () => {
     document.querySelector("#recipeFormPopup").style.display = "none";
 }
 // Open sidenav bar
-openNav = () => {
-    document.querySelector("#mySidenav").style.width = "250px";
-    document.querySelector("#main").style.marginLeft = "250px";
-    document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+// openNav = () => {
+//     document.querySelector("#mySidenav").style.width = "250px";
+//     document.querySelector("#main").style.marginLeft = "250px";
+//     document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+// }
+openCloseNav = () => {
+    if (document.querySelector("#mySidenav").style.width === "250px") {
+        (document.querySelector("#mySidenav").style.width = "250px") && (document.querySelector("#main").style.marginLeft = "250px")
+    } else {
+        (document.querySelector("#mySidenav").style.width = "0") && (document.querySelector("#main").style.marginLeft = "0")
+    }
 }
 
-// Set the width of the side navigation to 0 and the left margin of the page content to 0, and the background color of body to white
-closeNav = () => {
-    document.querySelector("#mySidenav").style.width = "0";
-    document.querySelector("#main").style.marginLeft = "0";
-    document.body.style.backgroundColor = "white";
-}
+// // Set the width of the side navigation to 0 and the left margin of the page content to 0, and the background color of body to white
+// closeNav = () => {
+//     document.querySelector("#mySidenav").style.width = "0";
+//     document.querySelector("#main").style.marginLeft = "0";
+//     document.body.style.backgroundColor = "white";
+// }
 
 Reset = () => {
     const dropDown = document.querySelector("#ingredients-select");
