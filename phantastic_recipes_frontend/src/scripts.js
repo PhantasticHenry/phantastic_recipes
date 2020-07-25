@@ -49,6 +49,14 @@ closeNav = () => {
     document.querySelector("#main").style.marginLeft = "0";
     document.body.style.backgroundColor = "white";
 }
+
+Reset = () => {
+    const dropDown = document.querySelector("#ingredients-select");
+    setTimeout(() => {
+        dropDown.selectedIndex = "top";
+    },1000)
+    
+}
 // Open list of ingredients that belong to recipe
 // openRecipeIngredients = (recipeId) => { 
 //     document.querySelector(`#ingredientsPopup-${recipeId}`).style.display = "block";
