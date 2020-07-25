@@ -7,26 +7,28 @@ class Recipes {
         this.addRecipeBtn = document.querySelector('#add-recipe-button');
         this.ingredientsBtn = document.querySelector('#ingredients-btn');
         this.ingredientsSelect = document.querySelector('#ingredients-select');
-        // this.listOfIngredients = document.querySelector('#all-ingredients');
-        // this.ingredientsContainer = document.querySelector('ingredients-container')
+        // this.mySidenav = document.querySelector('#mySidenav')
         this.initBindingsAndEventListeners();
         this.fetchAndLoadRecipes();
-        this.handleIngredientRecipes();
+        // this.handleIngredientRecipes();
     }
     
     initBindingsAndEventListeners() {
-        // this.viewAll.addEventListener('click', this.toggleCardContainer.bind(this));
         this.viewAll.addEventListener('click', function() {
             this.renderRecipes(this.recipes);
             this.toggleCardContainer();
         }.bind(this))
+        
 
-        this.ingredientsBtn.addEventListener('click', this.toggleIngredientsSelect.bind(this));
+        // this.ingredientsBtn.addEventListener('click', this.toggleIngredientsSelect.bind(this));
+        this.ingredientsBtn.addEventListener('click', function() {
+            this.toggleIngredientsSelect();
+            this.toggleCardContainer()
+        }.bind(this))
 
         this.addRecipeBtn.addEventListener('click', function(event) {
             event.preventDefault();
             this.recipesAdapter.createRecipe(event.target.parentElement);
-            toggleDisplay('#addRecipeForm');
         }.bind(this))
 
         this.ingredientsSelect.addEventListener('change', function(e) {
@@ -34,14 +36,14 @@ class Recipes {
             // debugger
             this.handleIngredientRecipes(ingredient);
             this.renderRecipes(this.ingredientRecipes);
-            console.log("test");
-            
+            document.querySelector('#card-container').style.display = "flex"
+            // toggleDisplay('#card-container');
+
         }.bind(this))
         
+     
         
     }
-
-    
     
     fetchAndLoadRecipes() {
         this.recipesAdapter.getRecipes().then(recipes => {
@@ -61,16 +63,17 @@ class Recipes {
     toggleIngredientsSelect() {
         toggleDisplay('#ingredients-select');
     }
-    // toggleListOfIngredients() {
-    //     toggleDisplay('#all-ingredients');
-    // }
 
     toggleCardContainer() {
+        // document.querySelector('#card-container').style.display == "flex" && this.clearContainer('#card-container');
         toggleDisplay('#card-container');
     }
 
+
+
     handleIngredientRecipes(ingredient) {
-        this.clearContainer('#card-container');
+        // this.clearContainer('#card-container');
+        // toggleCardContainer();
         this.ingredientRecipes = [];
         for(let recipe of this.recipes) {
             for(let recipeIngredient of recipe.ingredients) {
