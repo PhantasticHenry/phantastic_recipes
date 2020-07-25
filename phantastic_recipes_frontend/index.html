@@ -58,8 +58,9 @@
                 </form>
               </div>
               <button id="ingredients-btn" class="open-button">Ingredients</button>
-              <select id="ingredients-select" class="open-button fade-in select" style="display: none;">
-                <option>Select to View Ingredient Recipes</option>
+              <button id="viewAll" class="open-button">All Recipes</button>
+              <select id="ingredients-select" class="open-button fade-in select" style="display: none;" onchange="Reset();">
+                <option value="top">Select to View Ingredient Recipes</option>
               </select>
             </div>
             <div id="main">
@@ -79,7 +80,7 @@
     <div id="recipes" class="section-title text-center">
       <h2>Recipes</h2>
       <!-- <a class="dropdown-toggle"> -->
-        <span id="viewAll">view all</span><br>
+        <!-- <span id="showing"></span><br> -->
         <span class="caret"></span>
           <div id="card-container" class="recipe-card-container fade-in" style="display:none;">
             <!-- <div> recipe-card </div> -->        
