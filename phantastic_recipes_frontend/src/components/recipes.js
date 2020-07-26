@@ -4,10 +4,9 @@ class Recipes {
         this.recipesAdapter = new RecipesAdapter();
         this.listOfIngredients = new Ingredients();
         this.viewAll = document.querySelector('#viewAll');
-        this.cardElement = '#cardContainer'
         this.ingredientsSelect = document.querySelector('#ingredientsSelect');
         this.addRecipeBtn = document.querySelector('#addRecipeBtn');
-        this.formContainer = document.querySelector('#formContainer');
+        this.cardElement = '#cardContainer';
         this.initBindingsAndEventListeners();
         this.fetchAndLoadRecipes();
     }
@@ -16,7 +15,8 @@ class Recipes {
         
         this.viewAll.addEventListener('click', function() {
             this.renderRecipes(this.recipes);
-            this.toggleCardContainer();
+            // this.toggleCardContainer();
+            toggleDisplay(this.cardElement)
         }.bind(this))
 
         this.addRecipeBtn.addEventListener('click', function(e) {
@@ -40,7 +40,7 @@ class Recipes {
             recipe.createRecipeCard()            
         }
     }
-    
+
     fetchAndLoadRecipes() {
         this.recipesAdapter.getRecipes().then(recipes => {
             recipes.forEach(recipe => this.recipes.push(new Recipe(recipe)))                        
