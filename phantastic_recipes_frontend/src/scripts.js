@@ -1,4 +1,4 @@
-// document.addEventListener('DOMContent', () => {
+document.addEventListener('DOMContentLoaded', () => {
     //Get the button:
     const mybutton = document.getElementById("myBtn");
     // When the user scrolls down 20px from the top of the document, show the button
@@ -16,12 +16,12 @@
         document.body.scrollTop = 0; // For Safari
         document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
     }
-
+    
     toggleDisplay = (element) => {
-        const selector = document.querySelector(element)
-        selector.style.display === "none" ? selector.style.display = "flex" : selector.style.display = "none";
+        const selector = document.querySelector(element).style
+        selector.display === "none" ? selector.display = "flex" : selector.display = "none";
     }
-
+    
     clearContainer = (element) => {
         document.querySelector(element).innerHTML = ""
     }
@@ -51,4 +51,4 @@
         }
         return str.join(' ');
     };
-// })    
+})    

@@ -15,8 +15,7 @@ class Recipes {
         
         this.viewAll.addEventListener('click', function() {
             this.renderRecipes(this.recipes);
-            // this.toggleCardContainer();
-            toggleDisplay(this.cardElement)
+            this.toggleCardContainer();
         }.bind(this))
 
         this.addRecipeBtn.addEventListener('click', function(e) {
@@ -34,13 +33,7 @@ class Recipes {
         
     }
     
-    renderRecipes(recipes) {
-        clearContainer(this.cardElement);     
-        for (let recipe of recipes) {
-            recipe.createRecipeCard()            
-        }
-    }
-
+    
     fetchAndLoadRecipes() {
         this.recipesAdapter.getRecipes().then(recipes => {
             recipes.forEach(recipe => this.recipes.push(new Recipe(recipe)))                        
@@ -50,9 +43,15 @@ class Recipes {
         })
     }
     
+    renderRecipes(recipes) {
+        clearContainer(this.cardElement);     
+        for (let recipe of recipes) {
+            recipe.createRecipeCard()            
+        }
+    }
 
     toggleCardContainer() {
-        document.querySelector(this.cardElement).style.display === "none" && toggleDisplay(this.cardElement)
+        document.querySelector(this.cardElement).style.display === "none" && toggleDisplay(this.cardElement);
     }
 
     handleIngredientRecipes(ingredient) {
@@ -60,7 +59,7 @@ class Recipes {
         setTimeout(() => toggleDisplay('#ingredientsSelect'), 2000);
         for(let recipe of this.recipes) {
             for(let recipeIngredient of recipe.ingredients) {
-                (recipeIngredient.id == ingredient) && this.ingredientRecipes.push(recipe)
+                (recipeIngredient.id == ingredient) && this.ingredientRecipes.push(recipe);
             }
         }
     }
@@ -68,7 +67,7 @@ class Recipes {
     createRecipeIngredientsArray(ingredients) {
         const ingredientsArray = [];
         for (const ingredient of ingredients) {
-            ingredientsArray.push(ingredient)
+            ingredientsArray.push(ingredient);
         }
         return ingredientsArray
     }
