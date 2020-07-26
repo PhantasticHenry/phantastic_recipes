@@ -51,7 +51,7 @@ class Recipes {
     }
 
     toggleCardContainer() {
-        document.querySelector(this.cardElement).style.display === "none" && toggleDisplay(this.cardElement);
+        document.querySelector(this.cardElement).style.display === "none" && toggleDisplay(this.cardElement)
     }
 
     handleIngredientRecipes(ingredient) {
@@ -59,7 +59,7 @@ class Recipes {
         setTimeout(() => toggleDisplay('#ingredientsSelect'), 2000);
         for(let recipe of this.recipes) {
             for(let recipeIngredient of recipe.ingredients) {
-                (recipeIngredient.id == ingredient) && this.ingredientRecipes.push(recipe);
+                (recipeIngredient.id == ingredient) && this.ingredientRecipes.push(recipe)
             }
         }
     }
@@ -67,7 +67,7 @@ class Recipes {
     createRecipeIngredientsArray(ingredients) {
         const ingredientsArray = [];
         for (const ingredient of ingredients) {
-            ingredientsArray.push(ingredient);
+            ingredientsArray.push(ingredient)
         }
         return ingredientsArray
     }

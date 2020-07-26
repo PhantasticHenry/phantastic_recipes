@@ -174,7 +174,6 @@ header .intro-text {
     display: none;
     flex-flow: row wrap;
 	justify-content: space-around;
-	
 }
 #recipes .recipe-card {
 	display: flex;
@@ -183,8 +182,9 @@ header .intro-text {
 	justify-content: space-around;
     box-shadow: 4px 4px 8px 0 green;
     transition: 0.3s;
-    width: 32%;
-    margin-top: 20px;
+    width: 26%;
+	margin-top: 20px;
+	margin-bottom: 100px;
 }
 #recipes img {
 	border-radius: 25px;
