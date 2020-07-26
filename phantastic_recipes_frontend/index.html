@@ -5,15 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <!-- Favicons  -->
-    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
-    <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="img/apple-touch-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="img/apple-touch-icon-114x114.png">
-
     <!-- Bootstrap -->
     <link rel="stylesheet" type="text/css"  href="stylesheet/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="stylesheet/fonts/font-awesome/css/font-awesome.css">
 
     <!-- Stylesheet -->
     <link rel="stylesheet" type="text/css"  href="stylesheet/css/style.css">
@@ -29,11 +22,11 @@
       <div class="intro">
         <div class="overlay">
           <div id="mySidenav" class="sidenav">
-              <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-              <button class="open-button" onclick="openRecipeForm()">Add Recipe</button>
-              <div id="recipeFormPopup" class="form-popup fade-in">
+              <a href="javascript:void(0)" class="closebtn" onclick="openCloseNav()">&times;</a>
+              <button id="openCloseForm" class="open-button " onclick="toggleDisplay('#formContainer')">Add Recipe</button>
+              <div id="formContainer" class="add-recipe-form fade-in" style="display: none;">
                 <form id="addRecipeForm" class="form-container">
-                  <h1 class="glyphicon glyphicon-menu-right">Add Recipe</h1>
+                  <h1>Add Recipe</h1>
                   <!--  Add Recipe Form  -->
                   <label for="title"><b>Title</b></label>
                   <input type="text" placeholder="Enter Recipe Title" name="title" required>
@@ -48,23 +41,23 @@
                   <input type="text" placeholder="Vietnam | India | Italy | ect.." name="recipe_origin" required>
                   
                   <label for="recipe_type"><b>Recipe Type</b></label>
-                  <input type="text" placeholder="Breakfast | Lunch | Dinner | Dessert | Drink" name="recipe_type" required>
+                  <input type="text" placeholder="Appetizer | Breakfast | Lunch | Dinner | Dessert | Drink" name="recipe_type" required>
                   
                   <label for="ingredients"><b>Ingredients</b></label>
                   <input type="text" placeholder="(Example) - Eggs, Milk, Bacon" name="ingredients" required>
 
-                  <button id="add-recipe-button" type="submit" class="btn">Add Recipe</button>
-                  <button type="button" class="btn cancel" onclick="closeRecipeForm()">Close</button>
+                  <button id="addRecipeBtn" type="submit" class="btn">Add Recipe</button>
+                  <button id="closeFormBtn" type="button" class="btn cancel" onclick="toggleDisplay('#formContainer')">Close</button>
                 </form>
               </div>
-              <button id="ingredients-btn" class="open-button">Ingredients</button>
-              <button id="viewAll" class="open-button">All Recipes</button>
-              <select id="ingredients-select" class="open-button fade-in select" style="display: none;" onchange="Reset();">
+              <button id="ingredients-btn" class="open-button" onclick="toggleDisplay('#ingredientsSelect')">Ingredients</button>
+              <button id="viewAll" onclick="toggleDisplay('#cardContainer')" class="open-button">All Recipes</button>
+              <select id="ingredientsSelect" class="open-button fade-in select" style="display: none;" onchange="Reset();">
                 <option value="top">Select to View Ingredient Recipes</option>
               </select>
             </div>
-            <div id="main">
-              <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; more</span>
+            <div id="main" style="margin-left: 0px;">
+              <span style="font-size:30px;cursor:pointer" onclick="openCloseNav()">&#9776; more</span>
             </div>
         <div class="container">
           <div class="row">
@@ -79,25 +72,22 @@
     <!-- Recipes Section -->
     <div id="recipes" class="section-title text-center">
       <h2>Recipes</h2>
-      <!-- <a class="dropdown-toggle"> -->
-        <!-- <span id="showing"></span><br> -->
-        <span class="caret text-success"></span>
-          <div id="card-container" class="recipe-card-container fade-in" style="display:none;">
-            <!-- <div> recipe-card </div> -->        
-            <!-- <div> recipe-card </div> -->        
-            <!-- <div> recipe-card </div> -->        
-            <!-- ........................ -->        
-          </div>
-    <!-- </div> -->
+      <div id="cardContainer" class="recipe-card-container fade-in" style="display:none;">
+        <!-- <div> recipe-card </div> -->        
+        <!-- <div> recipe-card </div> -->        
+        <!-- <div> recipe-card </div> -->        
+        <!-- ........................ -->        
+      </div>       
+    </div>
     <button onclick="topFunction()" id="myBtn" title="Go to top">^</button>
     
-    <script src="src/scripts.js"></script>
     <script src="src/components/recipe.js"></script>
     <script src="src/components/recipes.js"></script>
     <script src="src/components/ingredients.js"></script>
     <script src="src/components/app.js"></script>
     <script src="src/adapters/IngredientsAdapter.js"></script>  
     <script src="src/adapters/RecipesAdapter.js"></script>  
+    <script src="src/scripts.js"></script>
     <script src="src/index.js"></script>
   </body>
 </html>
