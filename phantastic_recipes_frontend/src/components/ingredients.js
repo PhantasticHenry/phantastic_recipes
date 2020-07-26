@@ -9,7 +9,7 @@ class Ingredients {
     }
     
     sortedIngredientsList(data) {
-        const select = document.querySelector('#ingredients-select')
+        const select = document.querySelector('#ingredientsSelect')
         data.sort((a, b) => (a.name > b.name) ? 1 : -1)
         for (let ingredient of data) {
             const option = document.createElement('option')
