@@ -487,8 +487,8 @@ header .intro-text {
 	}
 }
 
-.fade-out {
+/* .fade-out {
 	visibility: visible;
 	opacity: 0;
-	transition: opacity 2s linear;
-}
+	transition: opacity 10s linear;
+} */
