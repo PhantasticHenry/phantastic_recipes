@@ -20,7 +20,10 @@ class Recipes {
 
         this.addRecipeBtn.addEventListener('click', function(e) {
             e.preventDefault();
-            this.recipesAdapter.createRecipe(e.target.parentElement);
+            
+            this.recipesAdapter.createRecipe(e.target.parentElement)
+            .then((res) => (this.addRecipe(res))
+            )
             toggleDisplay('#formContainer');
         }.bind(this))
 
@@ -33,6 +36,13 @@ class Recipes {
         
     }
     
+    addRecipe(form) {  
+        const recipe = new Recipe(form)        
+        const card = recipe.createRecipeCard();
+        const container = document.querySelector('#cardContainer');
+        container.appendChild(card);
+        return container
+    }
     
     fetchAndLoadRecipes() {
         this.recipesAdapter.getRecipes().then(recipes => {
@@ -42,9 +52,9 @@ class Recipes {
             this.renderRecipes(this.recipes)
         })
     }
-    
+
     renderRecipes(recipes) {
-        clearContainer(this.cardElement);     
+        clearContainer(this.cardElement);   
         for (let recipe of recipes) {
             recipe.createRecipeCard()            
         }
