@@ -22,7 +22,7 @@ class Recipes {
             e.preventDefault();
             
             this.recipesAdapter.createRecipe(e.target.parentElement)
-            .then((res) => (this.addRecipe(res))
+            .then((recipe) => (this.addRecipe(recipe))
             )
             toggleDisplay('#formContainer');
         }.bind(this))
@@ -35,13 +35,15 @@ class Recipes {
         }.bind(this))
         
     }
-    
-    addRecipe(form) {  
-        const recipe = new Recipe(form)        
-        const card = recipe.createRecipeCard();
-        const container = document.querySelector('#cardContainer');
-        container.appendChild(card);
-        return container
+    //need to debug this tomorrow asap
+    addRecipe(recipe) {
+        const r = new Recipe(recipe);
+        const card = r.createRecipeCard();
+        debugger
+        const container = document.querySelector('#cardContainer')
+        // container.appendChild(card)
+        // return container
+        return document.querySelector('.recipe-card-container').appendChild(card);
     }
     
     fetchAndLoadRecipes() {
@@ -56,7 +58,7 @@ class Recipes {
     renderRecipes(recipes) {
         clearContainer(this.cardElement);   
         for (let recipe of recipes) {
-            recipe.createRecipeCard()            
+            recipe.createRecipeCard();        
         }
     }
 
