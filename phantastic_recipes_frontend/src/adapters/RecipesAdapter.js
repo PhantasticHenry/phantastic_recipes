@@ -18,13 +18,13 @@ class RecipesAdapter {
                 title: titleCase(form[0].value),
                 recipe_link: form[1].value,
                 image_link: form[2].value,
-                recipe_origin: titleCase(form[3].value),
+                recipe_origin: form[3].value.toUpperCase(),
                 recipe_type: titleCase(form[4].value),
                 ingredients: form[5].value.split(', ')
             })
         })
         .then(res => res.json())
-        .catch((error) => alert(res.message))
+        .catch((error) => alert(`Error: ${error}`))
     }
 
 }
