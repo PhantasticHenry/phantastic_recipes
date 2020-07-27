@@ -182,9 +182,9 @@ header .intro-text {
 	justify-content: space-around;
     box-shadow: 4px 4px 8px 0 green;
     transition: 0.3s;
-    width: 26%;
-	margin-top: 20px;
-	margin-bottom: 100px;
+	width: 26%;
+	margin: 20px 50px 100px;
+
 }
 #recipes img {
 	border-radius: 25px;
@@ -405,7 +405,6 @@ header .intro-text {
 }
 .select {
 	display: none;
-	border-bottom-left-radius: 25px;
 	border-bottom-right-radius: 25px;
 	/* background-color: olivedrab; */
 	background:#a7c44c;
