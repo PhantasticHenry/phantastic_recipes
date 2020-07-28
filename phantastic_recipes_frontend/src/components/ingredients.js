@@ -5,6 +5,7 @@ class Ingredients {
     }
 
     fetchAndLoadIngredients() {
+        clearContainer('#ingredientsSelect')
         this.adapter.getIngredients().then(data => this.sortedIngredientsList(data))
     }
     
@@ -17,7 +18,7 @@ class Ingredients {
             option.innerText = ingredient.name
             select.appendChild(option)
         }
-        document.body.appendChild(select)
+        document.querySelector('#recipes').appendChild(select)
     }
 
 }

@@ -2,7 +2,7 @@ class Recipes {
     constructor() {
         this.recipes = [];
         this.recipesAdapter = new RecipesAdapter();
-        this.listOfIngredients = new Ingredients();
+        this.ingredients = new Ingredients();
         this.viewAll = document.querySelector('#viewAll');
         this.ingredientsSelect = document.querySelector('#ingredientsSelect');
         this.addRecipeBtn = document.querySelector('#addRecipeBtn');
@@ -20,10 +20,10 @@ class Recipes {
 
         this.addRecipeBtn.addEventListener('click', function(e) {
             e.preventDefault();
-            
             this.recipesAdapter.createRecipe(e.target.parentElement)
             .then((recipe) => (this.addRecipe(recipe))
             )
+            this.clearForm(e.target.parentElement);
             toggleDisplay('#formContainer');
         }.bind(this))
 
@@ -33,17 +33,20 @@ class Recipes {
             this.handleIngredientRecipes(ingredient);
             this.renderRecipes(this.ingredientRecipes);
         }.bind(this))
+
         
     }
-    //need to debug this tomorrow asap
+    
     addRecipe(recipe) {
         const r = new Recipe(recipe);
-        const card = r.createRecipeCard();
-        debugger
-        const container = document.querySelector('#cardContainer')
-        // container.appendChild(card)
-        // return container
-        return document.querySelector('.recipe-card-container').appendChild(card);
+        this.recipes.push(r);       
+        this.renderRecipes(this.recipes);
+        this.addIngredients();
+    }
+    
+    addIngredients() {
+        clearContainer('#ingredientsSelect');
+        new Ingredients();
     }
     
     fetchAndLoadRecipes() {
@@ -51,8 +54,7 @@ class Recipes {
             recipes.forEach(recipe => this.recipes.push(new Recipe(recipe)))                        
         })
         .then(() => {
-            this.renderRecipes(this.recipes)
-        })
+            this.renderRecipes(this.recipes)})
     }
 
     renderRecipes(recipes) {
@@ -68,7 +70,7 @@ class Recipes {
 
     handleIngredientRecipes(ingredient) {
         this.ingredientRecipes = [];
-        setTimeout(() => toggleDisplay('#ingredientsSelect'), 2000);
+        setTimeout(() => toggleDisplay('#ingredientsSelect'), 0);
         for(let recipe of this.recipes) {
             for(let recipeIngredient of recipe.ingredients) {
                 (recipeIngredient.id == ingredient) && this.ingredientRecipes.push(recipe)
@@ -76,12 +78,11 @@ class Recipes {
         }
     }
 
-    createRecipeIngredientsArray(ingredients) {
-        const ingredientsArray = [];
-        for (const ingredient of ingredients) {
-            ingredientsArray.push(ingredient)
+    clearForm(inputs) {
+        for (let input of inputs) {
+            input.value = ""
         }
-        return ingredientsArray
+        return inputs
     }
 
 }
