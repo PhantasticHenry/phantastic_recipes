@@ -20,7 +20,7 @@ class RecipesAdapter {
                 image_link: form[2].value,
                 recipe_origin: form[3].value.toUpperCase(),
                 recipe_type: titleCase(form[4].value),
-                ingredients: form[5].value.split(', ')
+                ingredients: titleCase(form[5].value).split(', ')
             })
         })
         .then(res => res.json())
