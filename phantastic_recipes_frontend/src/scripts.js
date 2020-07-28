@@ -22,10 +22,6 @@ document.addEventListener('DOMContentLoaded', () => {
         selector.display === "none" ? selector.display = "flex" : selector.display = "none";
     }
     
-    clearContainer = (element) => {
-        document.querySelector(element).innerHTML = ""
-    }
-
     openCloseNav = () => {
         const mySidenav = document.querySelector("#mySidenav");
         const main = document.querySelector('#main');
@@ -35,15 +31,15 @@ document.addEventListener('DOMContentLoaded', () => {
             (mySidenav.style.width = "250px") && (main.style.marginLeft = "250px")
         }
     }
-
-    Reset = (element) => {
-        const dropDown = document.querySelector("#ingredientsSelect");
+    
+    Reset = () => {
+        const dropDown = document.querySelector('#ingredientsSelect');
         setTimeout(() => {
             dropDown.selectedIndex = "top";
-        },2000)
+        }, 0)
         
     }
-
+    
     titleCase = (str) => {
         str = str.toLowerCase().split(' ');
         for (let i = 0; i < str.length; i++) {
@@ -52,3 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
         return str.join(' ');
     };
 })    
+
+clearContainer = (element) => {
+    document.querySelector(element).innerHTML = ""
+}
