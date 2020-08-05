@@ -23,7 +23,7 @@ class Recipes {
             this.recipesAdapter.createRecipe(e.target.parentElement)
             .then((recipe) => (this.addRecipe(recipe))
             )
-            this.clearForm(e.target.parentElement);
+            clearForm(e.target.parentElement);
             toggleDisplay('#formContainer');
         }.bind(this))
 
@@ -33,7 +33,6 @@ class Recipes {
             this.handleIngredientRecipes(ingredient);
             this.renderRecipes(this.ingredientRecipes);
         }.bind(this))
-
         
     }
     
@@ -76,13 +75,6 @@ class Recipes {
                 (recipeIngredient.id == ingredient) && this.ingredientRecipes.push(recipe)
             }
         }
-    }
-
-    clearForm(inputs) {
-        for (let input of inputs) {
-            input.value = ""
-        }
-        return inputs
     }
 
 }
