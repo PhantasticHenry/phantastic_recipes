@@ -39,6 +39,13 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 0)
         
     }
+
+    clearForm = (inputs) => {
+        for (let input of inputs) {
+            input.value = ""
+        }
+        return inputs
+    }
     
     titleCase = (str) => {
         str = str.toLowerCase().split(' ');
