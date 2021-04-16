@@ -20,5 +20,7 @@
 
 # Getting Started in Javascript
 <hr></hr>
-<li>open index.html</li>
+<ul>
+  <li>open index.html</li>
+</ul>
  
