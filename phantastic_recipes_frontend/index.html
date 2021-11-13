@@ -1,93 +1,205 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
-    <!-- Bootstrap -->
-    <link rel="stylesheet" type="text/css"  href="stylesheet/css/bootstrap.min.css">
+		<!-- Bootstrap -->
+		<link
+			rel="stylesheet"
+			type="text/css"
+			href="stylesheet/css/bootstrap.min.css"
+		/>
 
-    <!-- Stylesheet -->
-    <link rel="stylesheet" type="text/css"  href="stylesheet/css/style.css">
-    <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,500,600,700" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Rochester" rel="stylesheet">
-    
-    <title>Phantastic Recipes</title>
-  </head>
-  <body>
-    <!-- Header & Sidenav -->
-    <header id="header">
-      <div class="intro">
-        <div class="overlay">
-          <div id="mySidenav" class="sidenav">
-              <a href="javascript:void(0)" class="closebtn" onclick="openCloseNav()">&times;</a>
-              <button id="openCloseForm" class="open-button " onclick="toggleDisplay('#formContainer')">Add Recipe</button>
-              <div id="formContainer" class="add-recipe-form fade-in" style="display: none;">
-                <form id="addRecipeForm" class="form-container">
-                  <h1>Add Recipe</h1>
-                  <!--  Add Recipe Form  -->
-                  <label for="title"><b>Title</b></label>
-                  <input type="text" placeholder="Enter Recipe Title" name="title" required>
+		<!-- Stylesheet -->
+		<link
+			rel="stylesheet"
+			type="text/css"
+			href="stylesheet/css/style.css"
+		/>
+		<link
+			href="https://fonts.googleapis.com/css?family=Raleway:300,400,500,600,700"
+			rel="stylesheet"
+		/>
+		<link
+			href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700"
+			rel="stylesheet"
+		/>
+		<link
+			href="https://fonts.googleapis.com/css?family=Rochester"
+			rel="stylesheet"
+		/>
 
-                  <label for="recipe_link"><b>Recipe Link</b></label>
-                  <input type="text" placeholder="http://recipe-link-example.com" name="recipe_link" required>
-                  
-                  <label for="image_link"><b>Image Link</b></label>
-                  <input type="text" placeholder="http://image-link-example.com" name="image_link" required>
-                  
-                  <label for="recipe_origin"><b>Recipe Origin</b></label>
-                  <input type="text" placeholder="Vietnam | India | Italy | ect.." name="recipe_origin" required>
-                  
-                  <label for="recipe_type"><b>Recipe Type</b></label>
-                  <input type="text" placeholder="Appetizer | Breakfast | Lunch | Dinner | Dessert | Drink" name="recipe_type" required>
-                  
-                  <label for="ingredients"><b>Ingredients</b></label>
-                  <input type="text" placeholder="(Example) - Eggs, Milk, Bacon" name="ingredients" required>
+		<title>Phantastic Recipes</title>
+	</head>
+	<body>
+		<!-- Header & Sidenav -->
+		<header id="header">
+			<div class="intro">
+				<div class="overlay">
+					<div id="mySidenav" class="sidenav">
+						<a
+							href="javascript:void(0)"
+							class="closebtn"
+							onclick="openCloseNav()"
+							>&times;</a
+						>
+						<button
+							id="openCloseForm"
+							class="open-button"
+							onclick="toggleDisplay('#formContainer')"
+						>
+							Add Recipe
+						</button>
+						<div
+							id="formContainer"
+							class="add-recipe-form fade-in"
+							style="display: none"
+						>
+							<form id="addRecipeForm" class="form-container">
+								<h1>Add Recipe</h1>
+								<!--  Add Recipe Form  -->
+								<label for="title"><b>Title</b></label>
+								<input
+									type="text"
+									placeholder="Enter Recipe Title"
+									name="title"
+									required
+								/>
 
-                  <button id="addRecipeBtn" type="submit" class="btn">Add Recipe</button>
-                  <button id="closeFormBtn" type="button" class="btn cancel" onclick="toggleDisplay('#formContainer')">Close</button>
-                </form>
-              </div>
-              <button id="ingredients-btn" class="open-button" onclick="toggleDisplay('#ingredientsSelect')">Ingredients</button>
-              <button id="viewAll" onclick="toggleDisplay('#cardContainer')" class="open-button">All Recipes</button>
-              <select id="ingredientsSelect" class="open-button fade-in select" style="display: none;" onchange="Reset();">
-                <option value="top">Select to View Ingredient Recipes</option>
-              </select>
-            </div>
-            <div id="main" style="margin-left: 0px;">
-              <span style="font-size:30px;cursor:pointer" onclick="openCloseNav()">&#9776; more</span>
-            </div>
-        <div class="container">
-          <div class="row">
-            <div class="intro-text">
-              <h1>Phantastic</h1>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    </header>
-    <!-- Recipes Section -->
-    <div id="recipes" class="section-title text-center">
-      <h2>Recipes</h2>
-      <div id="cardContainer" class="recipe-card-container fade-in" style="display:none;">
-        <!-- <div> recipe-card </div> -->        
-        <!-- <div> recipe-card </div> -->        
-        <!-- <div> recipe-card </div> -->        
-        <!-- ........................ -->        
-      </div>       
-    </div>
-    <button onclick="topFunction()" id="myBtn" title="Go to top">^</button>
-    
-    <script src="src/components/recipe.js"></script>
-    <script src="src/components/recipes.js"></script>
-    <script src="src/components/ingredients.js"></script>
-    <script src="src/components/app.js"></script>
-    <script src="src/adapters/IngredientsAdapter.js"></script>  
-    <script src="src/adapters/RecipesAdapter.js"></script>  
-    <script src="src/scripts.js"></script>
-    <script src="src/index.js"></script>
-  </body>
+								<label for="recipe_link"
+									><b>Recipe Link</b></label
+								>
+								<input
+									type="text"
+									placeholder="http://recipe-link-example.com"
+									name="recipe_link"
+									required
+								/>
+
+								<label for="image_link"
+									><b>Image Link</b></label
+								>
+								<input
+									type="text"
+									placeholder="http://image-link-example.com"
+									name="image_link"
+									required
+								/>
+
+								<label for="recipe_origin"
+									><b>Recipe Origin</b></label
+								>
+								<input
+									type="text"
+									placeholder="Vietnam | India | Italy | ect.."
+									name="recipe_origin"
+									required
+								/>
+
+								<label for="recipe_type"
+									><b>Recipe Type</b></label
+								>
+								<input
+									type="text"
+									placeholder="Appetizer | Breakfast | Lunch | Dinner | Dessert | Drink"
+									name="recipe_type"
+									required
+								/>
+
+								<label for="ingredients"
+									><b>Ingredients</b></label
+								>
+								<input
+									type="text"
+									placeholder="(Example) - Eggs, Milk, Bacon"
+									name="ingredients"
+									required
+								/>
+
+								<button
+									id="addRecipeBtn"
+									type="submit"
+									class="btn"
+								>
+									Add Recipe
+								</button>
+								<button
+									id="closeFormBtn"
+									type="button"
+									class="btn cancel"
+									onclick="toggleDisplay('#formContainer')"
+								>
+									Close
+								</button>
+							</form>
+						</div>
+						<button
+							id="ingredients-btn"
+							class="open-button"
+							onclick="toggleDisplay('#ingredientsSelect')"
+						>
+							Ingredients
+						</button>
+						<button
+							id="viewAll"
+							onclick="toggleDisplay('#cardContainer')"
+							class="open-button"
+						>
+							All Recipes
+						</button>
+						<select
+							id="ingredientsSelect"
+							class="open-button fade-in select"
+							style="display: none"
+							onchange="Reset();"
+						>
+							<option value="top">
+								Select to View Ingredient Recipes
+							</option>
+						</select>
+					</div>
+					<div id="main" style="margin-left: 0px">
+						<span
+							style="font-size: 30px; cursor: pointer"
+							onclick="openCloseNav()"
+							>&#9776;
+						</span>
+					</div>
+					<div class="container">
+						<div class="row">
+							<div class="intro-text">
+								<h1>Phantastic</h1>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>
+		<!-- Recipes Section -->
+		<div id="recipes" class="section-title text-center">
+			<h2>Recipes</h2>
+			<div
+				id="cardContainer"
+				class="recipe-card-container fade-in"
+				style="display: none"
+			>
+				<!-- <div> recipe-card </div> -->
+				<!-- <div> recipe-card </div> -->
+				<!-- <div> recipe-card </div> -->
+				<!-- ........................ -->
+			</div>
+		</div>
+		<button onclick="topFunction()" id="myBtn" title="Go to top">^</button>
+
+		<script src="src/components/recipe.js"></script>
+		<script src="src/components/recipes.js"></script>
+		<script src="src/components/ingredients.js"></script>
+		<script src="src/components/app.js"></script>
+		<script src="src/adapters/IngredientsAdapter.js"></script>
+		<script src="src/adapters/RecipesAdapter.js"></script>
+		<script src="src/scripts.js"></script>
+		<script src="src/index.js"></script>
+	</body>
 </html>
