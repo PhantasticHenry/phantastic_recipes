@@ -171,6 +171,7 @@ a:focus,
 	font-weight: 400;
 	margin-top: 0;
 	text-shadow: 2px 3px 2px #8eb640;
+	text-align: center;
 }
 .intro span {
 	color: #a7c44c;
@@ -460,18 +461,18 @@ header .intro-text {
 }
 
 .fade-in {
-	animation: fadeIn ease 1.5s;
-	-webkit-animation: fadeIn ease 1.5s;
-	-moz-animation: fadeIn ease 1.5s;
-	-o-animation: fadeIn ease 1.5s;
-	-ms-animation: fadeIn ease 1.5s;
+	animation: fadeIn ease-in-out 500ms;
+	-webkit-animation: fadeIn ease-in-out 500ms;
+	-moz-animation: fadeIn ease-in-out 500ms;
+	-o-animation: fadeIn ease-in-out 500ms;
+	-ms-animation: fadeIn ease-in-out 500ms;
 }
 @keyframes fadeIn {
 	0% {
 		opacity: 0;
 	}
 	100% {
-		opacity: 0.9;
+		opacity: 1;
 	}
 }
 
